@@ -212,6 +212,18 @@ theorem direct_bound_eq (hd : 3 ≤ d) (hw : ValidWeights w)
     volume (solid a w R) < ⊤ ∧ vol (solid a w R) ≤ omega d * R ^ d ∧
     (vol (solid a w R) = omega d * R ^ d ↔ ∃ p : Space d, ∀ i, a i = p) := by sorry
 
+theorem scaled_radius_absolute_continuity (hd : 3 ≤ d) (hw : ValidWeights w)
+    (hZ : AnalyticNull d) (hC : CoareaSlabs a w) (s t : ℝ) (hs : 0 < s) (hst : s < t) :
+    AbsolutelyContinuousOnInterval (fun z => rad a w z ^ (2-(d:ℝ))) s t := by sorry
+
+theorem level_surface_cauchy_schwarz (hd : 3 ≤ d) (hw : ValidWeights w)
+    (hI : SharpIso d) (hF : SurfaceFinite a w) (hG : PuncturedGauss a w)
+    (hB : BallGauss d) (hA : SphereArea d) (hS : SardScalar d)
+    (hZ : AnalyticNull d) (hC : CoareaSlabs a w) :
+    ∀ᵐ t : ℝ, 0 < t → area a w t ^ 2 ≤
+      (∫ x, ‖gradient (u a w) x‖ ∂(surface (level a w t))) *
+      (∫ x, ‖gradient (u a w) x‖⁻¹ ∂(surface (level a w t))) := by sorry
+
 end Flux
 
 end ErdosVolume

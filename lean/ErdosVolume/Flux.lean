@@ -943,5 +943,36 @@ theorem direct_bound_eq (hd : 3 ≤ d) (hw : ValidWeights w)
   · rintro ⟨p,hp⟩
     rw [(coincident a w hw hp).2, vol_closed_ball _ hR.le]
 
+/-- The scaled equal-volume radius is absolutely continuous on every closed
+interval of strictly positive levels. -/
+theorem scaled_radius_absolute_continuity (hd : 3 ≤ d) (hw : ValidWeights w)
+    (hZ : AnalyticNull d) (hC : CoareaSlabs a w) (s t : ℝ) (hs : 0 < s) (hst : s < t) :
+    AbsolutelyContinuousOnInterval (fun z => rad a w z ^ (2-(d:ℝ))) s t := by
+  let P := fun x : ℝ => ((x / omega d) ^ (1/(d:ℝ))) ^ (2-(d:ℝ))
+  have hP : ContDiffOn ℝ 1 P (Set.Icc (W a w t) (W a w s)) := by
+    intro x hx
+    have hx' : 0 < x / omega d := div_pos ((W_pos a w hd hw (hs.trans hst)).trans_le hx.1) omega_pos
+    exact (((contDiffAt_id.div_const (omega d)).rpow_const_of_ne hx'.ne').rpow_const_of_ne
+      (Real.rpow_pos_of_pos hx' _).ne').contDiffWithinAt
+  obtain ⟨K,hLip⟩ := hP.exists_lipschitzOnWith one_ne_zero (convex_Icc ..) isCompact_Icc
+  apply hLip.comp_absolutelyContinuousOnInterval _ ((level_derivative a w hd hw hZ hC).1 s t hs hst)
+  intro z hz
+  rw [Set.uIcc_of_le hst.le] at hz
+  exact ⟨W_antitone a w hd hw (hs.trans_le hz.1) hz.2,W_antitone a w hd hw hs hz.1⟩
+
+/-- The two surface integrals appearing in the level-set Cauchy–Schwarz inequality. -/
+theorem level_surface_cauchy_schwarz (hd : 3 ≤ d) (hw : ValidWeights w)
+    (hI : SharpIso d) (hF : SurfaceFinite a w) (hG : PuncturedGauss a w)
+    (hB : BallGauss d) (hA : SphereArea d) (hS : SardScalar d)
+    (hZ : AnalyticNull d) (hC : CoareaSlabs a w) :
+    ∀ᵐ t : ℝ, 0 < t → area a w t ^ 2 ≤
+      (∫ x, ‖gradient (u a w) x‖ ∂(surface (level a w t))) *
+      (∫ x, ‖gradient (u a w) x‖⁻¹ ∂(surface (level a w t))) := by
+  filter_upwards [ae_regular a w hd hw hS, (level_derivative a w hd hw hZ hC).2,
+    level_inequalities a w hd hw hI hF hG hB hA hS hZ hC] with t hr hD hineq
+  intro ht
+  rw [flux_identity a w hd hw hG hB hA ht (hr ht)]
+  simpa only [(hD ht).deriv, neg_neg, density] using (hineq ht).2
+
 end Flux
 end ErdosVolume

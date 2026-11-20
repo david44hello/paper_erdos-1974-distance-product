@@ -119,4 +119,11 @@ theorem worst_ratio_limit (R : ℝ) (P : Measure (Space 3) → Prop)
       0 < deficit μ R ∧ deficit μ R ≤ h ∧ c*deficit μ R < 1-inradius (measureSolid μ R)/R) :
     Tendsto (worstRatio P R) (𝓝[>] 0) (𝓝 1) := by sorry
 
+theorem pair_cubic_radial_mean :
+    (∃ C δ : ℝ, 0 < C ∧ 0 < δ ∧ ∀ t : ℝ, 0 < t → t < δ →
+      ∀ θ : sphere (0 : Space 3) 1,
+        |(Real.sqrt (boundarySq t ((θ : Space 3) 0)))^3 -
+          (1+(3/2:ℝ)*t^2*(2*((θ : Space 3) 0)^2-1))| ≤ C*t^4) ∧
+    (∫ θ : sphere (0 : Space 3) 1, 2*((θ : Space 3) 0)^2-1 ∂sphereLaw) = -(1/3:ℝ) := by sorry
+
 end ErdosVolume

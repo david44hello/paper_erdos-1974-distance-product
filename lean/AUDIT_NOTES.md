@@ -1,11 +1,11 @@
 # Distance-product proof audit notes
-Version 1.00 — November 19, 2026. Final v1.22 proofs, manuscript correspondence and real-limit bounds.
+Version 1.10 — November 19, 2026. Scope of the final v1.42 short paper and its unit-threshold infimum.
 
 In the direct proof, CoareaSlabs applies the coarea formula to the finite-charge potential U. PuncturedGauss applies the divergence theorem to its smooth punctured superlevels. SurfaceFinite says that a smooth compact regular level surface of U has finite area. The integrated differential inequality uses local absolute continuity of W as well as its almost-everywhere derivative estimate.
 
 The capacity proof uses the equality clause of Clark–Laugesen in one direction: equality gives sphere inclusion for every mark. The converse would impose a further capacity-zero restriction outside the ball. Paper.equality_capacity_spheres is the coverage link between the volume equality and the sphere inclusion.
 
-The final mathematical scope PDF has SHA-256 fd7d9540f118ee24eb67ddc2bb78b0c07a2071ffdb54001b0d7be9c3d87ba5e8. It refers to reviewer tag v1.02. Both theorem environments match v1.02 and v1.12.
+The mathematical short PDF is pinned by SHA-256 e5b7c13b0a0c0ddc5fe0750b32740e2487252842844e4c33c5a3c41df9bc2948. The current reader incorporates the name-only ending and a revised expanded attachment. Both versions have the same short mathematical text and line locations. The guide tag input still refers to v1.22 in these copies.
 
 | Root | Scope of checked deduction |
 |---|---|
@@ -24,12 +24,18 @@ The audit classifies a theorem with a named analytic premise as PROVED GIVEN whe
 
 The final stability module has 35 public theorems. Its local upper-bound root takes CompactIso, EqExists, Frostman, EqUnique and BallLaw. Paper.uniform_upper_given and Paper.sharp_stability_given supply the first two through the open isocapacity, capacity normalization, ball capacity and equilibrium existence premises. Their seven explicit paper-level premises therefore cover the arbitrary-threshold upper bound and both limiting supremum statements. Each permits every compactly supported source probability and imposes no uniform bound on its support radius.
 
-The audit contains 162 public theorems. It classifies 117 as PROVED, 40 as PROVED GIVEN and five as OPEN. The five unconditional targets with placeholders are Paper.finite_volume, Paper.erdos_product, Paper.first_order_radius, uniform_upper and sharp_stability. Source counts include public helpers.
+The audit contains 175 public theorems. It classifies 124 as PROVED, 46 as PROVED GIVEN and five as OPEN. The five unconditional targets with placeholders are Paper.finite_volume, Paper.erdos_product, Paper.first_order_radius, uniform_upper and sharp_stability. Source counts include public helpers.
 
 ## Bounds for real upper limits
 
-Paper.sequence_cost_limsup, Paper.fixed_delta_cost_limsup and Paper.sequence_inradius_loss_limsup each prove eventual upper boundedness of the same real sequence used in their limsup. In v1.02 the first theorem stated the numerical upper bound alone. An unbounded real sequence can have a computed real limsup of zero in Lean. The [control](scripts/RealLimsupControl.lean) proves this for the natural numbers embedded in the reals. All three strengthened theorems take the seven paper-level stability hypotheses.
+Paper.sequence_cost_limsup, Paper.fixed_delta_cost_limsup and Paper.sequence_inradius_loss_limsup each prove eventual upper boundedness of the same real sequence used in their limsup. The limsup conjunct in v1.02 gave only the numerical upper bound. A separate conjunct gave convergence of gamma/D to one. An unbounded real sequence can have a computed real limsup of zero in Lean. The [control](scripts/RealLimsupControl.lean) proves this for the natural numbers embedded in the reals. All three strengthened theorems take the seven paper-level stability hypotheses.
 
 For the fixed-width cost estimate the theorem first produces a positive constant C and a positive upper cutoff for δ. At each admissible δ the denominator 1/6 − Cδ is positive. The proof uses the common trial center at that width before taking the upper limit. For the inradius sequence the proof applies the uniform estimate to positive deficits tending to zero. [Exact statements and proofs](ErdosVolume/Paper/StabilityLimits.lean)
 
 The journal proof also includes the exact radial and tangential Hessian actions, the shell direction estimate, and the original-coordinate trial integral. [Final correspondence](JOURNAL_CROSSWALK.md)
+
+## The Discussion in dimension three
+
+At threshold one, attainableRadii takes every admissible source law satisfying the printed volume cutoff. The set has a witness and a real lower bound for each nonnegative ε. The proof at zero deficit takes compact subsets with positive auxiliary tolerances tending to zero. Their capacity deficits force the minimum log cost to vanish, and the source must be a point mass. For the opposite bound, continuity of the equal-pair radial integral gives a pair at each sufficiently small prescribed deficit. Both facts enter the sharp infimum. The theorem uses the same seven hypotheses as the uniform stability result. [Proofs](ErdosVolume/Paper/Discussion.lean)
+
+The real-line length calculation covers arbitrary placements, including the two-interval regime. In arbitrary Euclidean dimension the separate axial and perpendicular results allow every midpoint and the limiting half-separation t=1. These geometric statements have no named analytic input. [Proofs](ErdosVolume/Paper/PairGeometry.lean)

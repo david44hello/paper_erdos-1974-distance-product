@@ -9,7 +9,7 @@ open scoped ENNReal BigOperators
 
 namespace ErdosVolume.Paper
 
-/-- Main text, lines 75–76. At unit threshold two distinct marks give strict volume loss. -/
+/-- Main text, lines 72–73. At unit threshold two distinct marks give strict volume loss. -/
 theorem distinct_pair_strict_volume_given
     (hO : OpenIsoFact 3) (hN : CapacityNormalization 3) (hB : BallCapacityFact 3)
     (hE : EquilibriumExistence 3) (hM : EquilibriumMomentFact 3) (hS : EquilibriumSphereFact 3)
@@ -21,7 +21,7 @@ theorem distinct_pair_strict_volume_given
   have hne : ¬ ∀ i j, a i = a j := fun h => hpq (h 0 1)
   simpa [Fin.prod_univ_two, a] using And.intro hfin (lt_of_le_of_ne hle (fun h => hne (heq.mp h)))
 
-/-- Main text, lines 250–255. One coordinate partial witnesses the null-set argument
+/-- Main text, lines 271–278. One coordinate partial witnesses the null-set argument
 on the complement of the charges. -/
 theorem analytic_partial_zero_set {d n : ℕ} (hd : 3 ≤ d)
     (a : Fin n → Space d) (w : Fin n → ℝ) (hw : ValidWeights w) (hZ : Flux.AnalyticNull d) :
@@ -43,7 +43,7 @@ theorem analytic_partial_zero_set {d n : ℕ} (hd : 3 ≤ d)
   change fderiv ℝ (Flux.u a w) y v = 0
   rw [← inner_gradient_left, hg, inner_zero_left]
 
-/-- Inradius section, lines 70–78. Outside the cylinder the transverse term
+/-- Inradius section, lines 79–91. Outside the cylinder the transverse term
 alone makes the squared distance product strictly greater than one. -/
 theorem outside_cylinder_product_bounds (x : Space 3) (t : ℝ)
     (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2) (hout : 1 - t^2 < (transverse x)^2) :

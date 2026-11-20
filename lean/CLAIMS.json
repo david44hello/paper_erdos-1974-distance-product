@@ -577,6 +577,42 @@
     ]
   },
   {
+    "name": "ErdosVolume.Flux.scaled_radius_absolute_continuity",
+    "file": "ErdosVolume/Flux.lean",
+    "line": 948,
+    "status": "PROVED GIVEN",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": [
+      "ErdosVolume.Flux.AnalyticNull",
+      "ErdosVolume.Flux.CoareaSlabs"
+    ]
+  },
+  {
+    "name": "ErdosVolume.Flux.level_surface_cauchy_schwarz",
+    "file": "ErdosVolume/Flux.lean",
+    "line": 964,
+    "status": "PROVED GIVEN",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": [
+      "ErdosVolume.Flux.AnalyticNull",
+      "ErdosVolume.Flux.BallGauss",
+      "ErdosVolume.Flux.CoareaSlabs",
+      "ErdosVolume.Flux.PuncturedGauss",
+      "ErdosVolume.Flux.SardScalar",
+      "ErdosVolume.Flux.SharpIso",
+      "ErdosVolume.Flux.SphereArea",
+      "ErdosVolume.Flux.SurfaceFinite"
+    ]
+  },
+  {
     "name": "ErdosVolume.Paper.equilibrium_exists_for_stability",
     "file": "ErdosVolume/Paper/Conditional.lean",
     "line": 13,
@@ -630,6 +666,98 @@
     "name": "ErdosVolume.Paper.sharp_stability_given",
     "file": "ErdosVolume/Paper/Conditional.lean",
     "line": 36,
+    "status": "PROVED GIVEN",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": [
+      "ErdosVolume.BallCapacityFact",
+      "ErdosVolume.CapacityNormalization",
+      "ErdosVolume.EquilibriumExistence",
+      "ErdosVolume.OpenIsoFact",
+      "ErdosVolume.Stability.BallLaw",
+      "ErdosVolume.Stability.EqUnique",
+      "ErdosVolume.Stability.Frostman"
+    ]
+  },
+  {
+    "name": "ErdosVolume.Paper.zero_deficit_rigidity",
+    "file": "ErdosVolume/Paper/Discussion.lean",
+    "line": 78,
+    "status": "PROVED GIVEN",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": [
+      "ErdosVolume.BallCapacityFact",
+      "ErdosVolume.CapacityNormalization",
+      "ErdosVolume.EquilibriumExistence",
+      "ErdosVolume.OpenIsoFact",
+      "ErdosVolume.Stability.BallLaw",
+      "ErdosVolume.Stability.EqUnique",
+      "ErdosVolume.Stability.Frostman"
+    ]
+  },
+  {
+    "name": "ErdosVolume.Paper.pair_hits_volume_deficit",
+    "file": "ErdosVolume/Paper/Discussion.lean",
+    "line": 157,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.Paper.discussion_sharp_infimum",
+    "file": "ErdosVolume/Paper/Discussion.lean",
+    "line": 208,
+    "status": "PROVED GIVEN",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": [
+      "ErdosVolume.BallCapacityFact",
+      "ErdosVolume.CapacityNormalization",
+      "ErdosVolume.EquilibriumExistence",
+      "ErdosVolume.OpenIsoFact",
+      "ErdosVolume.Stability.BallLaw",
+      "ErdosVolume.Stability.EqUnique",
+      "ErdosVolume.Stability.Frostman"
+    ]
+  },
+  {
+    "name": "ErdosVolume.Paper.minimum_cost_tends_zero",
+    "file": "ErdosVolume/Paper/Discussion.lean",
+    "line": 257,
+    "status": "PROVED GIVEN",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": [
+      "ErdosVolume.BallCapacityFact",
+      "ErdosVolume.CapacityNormalization",
+      "ErdosVolume.EquilibriumExistence",
+      "ErdosVolume.OpenIsoFact",
+      "ErdosVolume.Stability.BallLaw",
+      "ErdosVolume.Stability.EqUnique",
+      "ErdosVolume.Stability.Frostman"
+    ]
+  },
+  {
+    "name": "ErdosVolume.Paper.cutoff_sup_at_least_one",
+    "file": "ErdosVolume/Paper/Discussion.lean",
+    "line": 275,
     "status": "PROVED GIVEN",
     "axioms": [
       "Classical.choice",
@@ -813,6 +941,66 @@
     "name": "ErdosVolume.Paper.journal_shell_direction",
     "file": "ErdosVolume/Paper/JournalHessian.lean",
     "line": 112,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.Paper.pair_axis_reach",
+    "file": "ErdosVolume/Paper/PairGeometry.lean",
+    "line": 23,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.Paper.pair_transverse_reach",
+    "file": "ErdosVolume/Paper/PairGeometry.lean",
+    "line": 45,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.Paper.line_pair_interval",
+    "file": "ErdosVolume/Paper/PairGeometry.lean",
+    "line": 81,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.Paper.line_pair_two_intervals",
+    "file": "ErdosVolume/Paper/PairGeometry.lean",
+    "line": 101,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.Paper.line_pair_optimum",
+    "file": "ErdosVolume/Paper/PairGeometry.lean",
+    "line": 144,
     "status": "PROVED",
     "axioms": [
       "Classical.choice",
@@ -1694,6 +1882,18 @@
       "Quot.sound",
       "propext",
       "sorryAx"
+    ],
+    "analytic_inputs": []
+  },
+  {
+    "name": "ErdosVolume.pair_cubic_radial_mean",
+    "file": "ErdosVolume/Sharpness.lean",
+    "line": 754,
+    "status": "PROVED",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
     ],
     "analytic_inputs": []
   },

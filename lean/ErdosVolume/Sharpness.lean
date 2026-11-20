@@ -86,7 +86,7 @@ theorem trunc_log_continuous (μ : Measure (Space 3)) (hμ : admissible μ) (k :
   · exact .of_forall fun a => (((continuous_id.dist (continuous_const (y := a))).max continuous_const).log
       (fun z => (he.trans_le (le_max_right (dist z a) e)).ne')).continuousAt
 
-/-- The solid for a compact source is bounded and measurable (inradius lines 12–25). -/
+/-- The solid for a compact source is bounded and measurable (inradius lines 17–31). -/
 theorem measureSolid_regular (μ : Measure (Space 3)) (hμ : admissible μ)
     (R : ℝ) (hR : 0 < R) :
     MeasurableSet (measureSolid μ R) ∧ Bornology.IsBounded (measureSolid μ R) := by
@@ -263,7 +263,7 @@ theorem pair_outside_cylinder (x : Space 3) (t : ℝ) (ht : 0 < t) (ht' : t < 1/
   nlinarith [mul_nonneg (sq_nonneg (x 0)) (show 0 ≤ (transverse x)^2-t^2 by linarith),
     sq_nonneg ((x 0)^2)]
 
-/-- Inradius lines 66–88. Both the inscribed ball and the enclosing cylinder. -/
+/-- Inradius lines 73–102. Both the inscribed ball and the enclosing cylinder. -/
 theorem pair_ball_cylinder (t : ℝ) (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2) :
     closedBall 0 (Real.sqrt (1-t^2)) ⊆ measureSolid (pairLaw t) 1 ∧
     measureSolid (pairLaw t) 1 ⊆ {x | transverse x ≤ Real.sqrt (1-t^2)} := by
@@ -324,7 +324,7 @@ theorem pair_inradius (t : ℝ) (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2) :
     (le_csSup ⟨_, fun r hr => hup r hr⟩ (show Real.sqrt (1-t^2) ∈ A from
       Or.inr ⟨hpos, 0, ball_subset_closedBall.trans hball⟩))
 
-/-- Inradius lines 94–102. A ray meets the boundary at the unique positive root. -/
+/-- Inradius lines 105–124. A ray meets the boundary at the unique positive root. -/
 theorem pair_radial (t : ℝ) (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2)
     (θ : Space 3) (hθ : ‖θ‖ = 1) (r : ℝ) (hr : 0 ≤ r) :
     (r • θ ∈ measureSolid (pairLaw t) 1 ↔ r^2 ≤ boundarySq t (θ 0)) ∧
@@ -657,7 +657,7 @@ theorem pair_ratio_limit : Tendsto (fun t : ℝ => ratio (pairLaw t) 1) (𝓝[>]
 
 end PairVolume
 
-/-- Main text lines 86–89 and inradius lines 46–50. -/
+/-- Main text lines 30–35 and inradius lines 53–57. -/
 theorem uniform_upper (R : ℝ) (hR : 0 < R) (ε : ℝ) (hε : 0 < ε) :
     ∃ h > 0, ∀ μ, admissible μ → 0 < deficit μ R → deficit μ R ≤ h →
        1 - inradius (measureSolid μ R) / R ≤ (1+ε)*deficit μ R := by sorry
@@ -749,5 +749,29 @@ theorem sharp_stability (R : ℝ) (hR : 0 < R) :
   intro c hc h hh
   obtain ⟨μ,hm,_,rest⟩ := sharp_coefficient R hR c hc h hh
   exact ⟨μ,hm,trivial,rest⟩
+
+/-- Uniform cubic-radius expansion on the unit sphere and its averaged angular factor. -/
+theorem pair_cubic_radial_mean :
+    (∃ C δ : ℝ, 0 < C ∧ 0 < δ ∧ ∀ t : ℝ, 0 < t → t < δ →
+      ∀ θ : sphere (0 : Space 3) 1,
+        |(Real.sqrt (boundarySq t ((θ : Space 3) 0)))^3 -
+          (1+(3/2:ℝ)*t^2*(2*((θ : Space 3) 0)^2-1))| ≤ C*t^4) ∧
+    (∫ θ : sphere (0 : Space 3) 1, 2*((θ : Space 3) 0)^2-1 ∂sphereLaw) = -(1/3:ℝ) := by
+  obtain ⟨C,δ,hC,hδ,herr⟩ := uniform_radial_error
+  constructor
+  · refine ⟨(C+1)^2*(C+3)+3*C/2, min δ (min 1 (1/Real.sqrt 2)), by positivity,
+      lt_min hδ (lt_min one_pos (by positivity)), ?_⟩
+    intro t hp ht θ
+    obtain ⟨htδ,ht₁,htr⟩ := (lt_min_iff.mp ht).imp_right lt_min_iff.mp
+    have hu : |(θ : Space 3) 0| ≤ 1 := by
+      simpa [Real.norm_eq_abs, directionNorm θ] using (PiLp.norm_apply_le (p := 2) (θ:Space 3) 0)
+    exact pairRadiusCubeError C t _ hC hp ht₁ hu
+      (pair_radial t hp htr θ (directionNorm θ) 0 le_rfl).2.1.le (herr t _ hp htδ hu)
+  · let : IsProbabilityMeasure sphereLaw := probSphereLaw
+    have hi : Integrable (fun θ : PairDirection => ((θ:Space 3) 0)^2) sphereLaw :=
+      sphereIntegrable ((pairDirectionCoord 0).pow 2)
+    rw [integral_sub (f := fun θ : PairDirection => 2*((θ:Space 3) 0)^2) (g := fun _ => (1:ℝ)) (hi.const_mul 2) (integrable_const 1),integral_const_mul,
+      axial_second_moment,integral_const]
+    norm_num
 
 end ErdosVolume

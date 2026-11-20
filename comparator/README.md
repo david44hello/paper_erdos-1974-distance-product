@@ -1,6 +1,6 @@
 # Comparing the Lean statements and proofs
 
-[Challenge.lean](Challenge.lean) imports the modules that specify the statements. [comparator.json](comparator.json) lists the 157 declarations to compare with the proofs and the three permitted Lean axioms. The five statements still marked OPEN in [the audit](../lean/AUDIT.md) are excluded from the list. Each conditional statement includes its analytic hypotheses.
+[Challenge.lean](Challenge.lean) imports the modules that specify the statements. [comparator.json](comparator.json) lists the 170 declarations to compare with the proofs and the three permitted Lean axioms. The five statements still marked OPEN in [the audit](../lean/AUDIT.md) are excluded from the list. Each conditional statement includes its analytic hypotheses.
 
 Use Linux with Git, elan and bubblewrap (`bwrap`) installed and working. From the root of a clean Git checkout, prepare a temporary copy. The tag pins the Lean toolchain and Mathlib dependencies.
 

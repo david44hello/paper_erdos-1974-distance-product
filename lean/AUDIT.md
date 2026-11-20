@@ -1,6 +1,6 @@
 # Lean theorem audit
 
-5 OPEN, 117 PROVED, 40 PROVED GIVEN
+5 OPEN, 124 PROVED, 46 PROVED GIVEN
 
 Counts include public helper theorems. Each status applies to the full linked statement.
 The source inventory and paper line map distinguish the printed claims from their supporting lemmas.
@@ -49,10 +49,17 @@ The source inventory and paper line map distinguish the printed claims from thei
 | [ErdosVolume.Flux.strict_volume](ErdosVolume/Flux.lean#L889) | PROVED |  |
 | [ErdosVolume.Flux.coincident](ErdosVolume/Flux.lean#L907) | PROVED |  |
 | [ErdosVolume.Flux.direct_bound_eq](ErdosVolume/Flux.lean#L919) | PROVED GIVEN | ErdosVolume.Flux.AnalyticNull, ErdosVolume.Flux.BallGauss, ErdosVolume.Flux.CoareaSlabs, ErdosVolume.Flux.PuncturedGauss, ErdosVolume.Flux.SardScalar, ErdosVolume.Flux.SharpIso, ErdosVolume.Flux.SphereArea, ErdosVolume.Flux.SurfaceFinite |
+| [ErdosVolume.Flux.scaled_radius_absolute_continuity](ErdosVolume/Flux.lean#L948) | PROVED GIVEN | ErdosVolume.Flux.AnalyticNull, ErdosVolume.Flux.CoareaSlabs |
+| [ErdosVolume.Flux.level_surface_cauchy_schwarz](ErdosVolume/Flux.lean#L964) | PROVED GIVEN | ErdosVolume.Flux.AnalyticNull, ErdosVolume.Flux.BallGauss, ErdosVolume.Flux.CoareaSlabs, ErdosVolume.Flux.PuncturedGauss, ErdosVolume.Flux.SardScalar, ErdosVolume.Flux.SharpIso, ErdosVolume.Flux.SphereArea, ErdosVolume.Flux.SurfaceFinite |
 | [ErdosVolume.Paper.equilibrium_exists_for_stability](ErdosVolume/Paper/Conditional.lean#L13) | PROVED GIVEN | ErdosVolume.EquilibriumExistence |
 | [ErdosVolume.Paper.compact_iso_for_stability](ErdosVolume/Paper/Conditional.lean#L24) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.OpenIsoFact |
 | [ErdosVolume.Paper.uniform_upper_given](ErdosVolume/Paper/Conditional.lean#L28) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.OpenIsoFact, ErdosVolume.Stability.BallLaw, ErdosVolume.Stability.EqUnique, ErdosVolume.Stability.Frostman |
 | [ErdosVolume.Paper.sharp_stability_given](ErdosVolume/Paper/Conditional.lean#L36) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.OpenIsoFact, ErdosVolume.Stability.BallLaw, ErdosVolume.Stability.EqUnique, ErdosVolume.Stability.Frostman |
+| [ErdosVolume.Paper.zero_deficit_rigidity](ErdosVolume/Paper/Discussion.lean#L78) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.OpenIsoFact, ErdosVolume.Stability.BallLaw, ErdosVolume.Stability.EqUnique, ErdosVolume.Stability.Frostman |
+| [ErdosVolume.Paper.pair_hits_volume_deficit](ErdosVolume/Paper/Discussion.lean#L157) | PROVED |  |
+| [ErdosVolume.Paper.discussion_sharp_infimum](ErdosVolume/Paper/Discussion.lean#L208) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.OpenIsoFact, ErdosVolume.Stability.BallLaw, ErdosVolume.Stability.EqUnique, ErdosVolume.Stability.Frostman |
+| [ErdosVolume.Paper.minimum_cost_tends_zero](ErdosVolume/Paper/Discussion.lean#L257) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.OpenIsoFact, ErdosVolume.Stability.BallLaw, ErdosVolume.Stability.EqUnique, ErdosVolume.Stability.Frostman |
+| [ErdosVolume.Paper.cutoff_sup_at_least_one](ErdosVolume/Paper/Discussion.lean#L275) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.OpenIsoFact, ErdosVolume.Stability.BallLaw, ErdosVolume.Stability.EqUnique, ErdosVolume.Stability.Frostman |
 | [ErdosVolume.Paper.equality_capacity_spheres](ErdosVolume/Paper/Equality.lean#L10) | PROVED GIVEN | ErdosVolume.BallCapacityFact, ErdosVolume.CapacityNormalization, ErdosVolume.EquilibriumExistence, ErdosVolume.EquilibriumMomentFact, ErdosVolume.EquilibriumSphereFact, ErdosVolume.OpenIsoFact |
 | [ErdosVolume.Paper.pair_axial_polynomial](ErdosVolume/Paper/Illustrations.lean#L13) | PROVED |  |
 | [ErdosVolume.Paper.transverse_strict](ErdosVolume/Paper/Illustrations.lean#L24) | PROVED |  |
@@ -67,6 +74,11 @@ The source inventory and paper line map distinguish the printed claims from thei
 | [ErdosVolume.Paper.coalescent_deficits](ErdosVolume/Paper/Illustrations.lean#L205) | PROVED |  |
 | [ErdosVolume.Paper.journal_hessian_eigendirections](ErdosVolume/Paper/JournalHessian.lean#L64) | PROVED |  |
 | [ErdosVolume.Paper.journal_shell_direction](ErdosVolume/Paper/JournalHessian.lean#L112) | PROVED |  |
+| [ErdosVolume.Paper.pair_axis_reach](ErdosVolume/Paper/PairGeometry.lean#L23) | PROVED |  |
+| [ErdosVolume.Paper.pair_transverse_reach](ErdosVolume/Paper/PairGeometry.lean#L45) | PROVED |  |
+| [ErdosVolume.Paper.line_pair_interval](ErdosVolume/Paper/PairGeometry.lean#L81) | PROVED |  |
+| [ErdosVolume.Paper.line_pair_two_intervals](ErdosVolume/Paper/PairGeometry.lean#L101) | PROVED |  |
+| [ErdosVolume.Paper.line_pair_optimum](ErdosVolume/Paper/PairGeometry.lean#L144) | PROVED |  |
 | [ErdosVolume.Paper.general_log_bridge](ErdosVolume/Paper/Representation.lean#L16) | PROVED |  |
 | [ErdosVolume.Paper.pair_squared_mean](ErdosVolume/Paper/Representation.lean#L94) | PROVED |  |
 | [ErdosVolume.Paper.pair_outside_cylinder](ErdosVolume/Paper/Representation.lean#L98) | PROVED |  |
@@ -134,6 +146,7 @@ The source inventory and paper line map distinguish the printed claims from thei
 | [ErdosVolume.sharp_coefficient](ErdosVolume/Sharpness.lean#L686) | PROVED |  |
 | [ErdosVolume.worst_ratio_limit](ErdosVolume/Sharpness.lean#L716) | PROVED |  |
 | [ErdosVolume.sharp_stability](ErdosVolume/Sharpness.lean#L744) | OPEN |  |
+| [ErdosVolume.pair_cubic_radial_mean](ErdosVolume/Sharpness.lean#L754) | PROVED |  |
 | [ErdosVolume.stability_center](ErdosVolume/Stability.lean#L244) | PROVED |  |
 | [ErdosVolume.stability_center_ball](ErdosVolume/Stability.lean#L322) | PROVED |  |
 | [ErdosVolume.stability_scalar_limits](ErdosVolume/Stability.lean#L393) | PROVED |  |
