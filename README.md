@@ -1,5 +1,7 @@
 # The ball maximizes volume in Erdős's 1974 distance-product problem
 
+The paper: https://doi.org/10.5281/zenodo.24378921
+
 What is in this repository:
 
 - [lean/](lean/) - the Lean 4 formalization of the paper. Its README says what is proved, what it takes as given, and how to verify it.
