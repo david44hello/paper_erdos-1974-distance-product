@@ -52,7 +52,7 @@ def EquilibriumSphereFact (d : ℕ) : Prop :=
     (∫ x, Real.log (dist x a) ∂ν) = Real.log (capRadius K) →
     Metric.sphere a (capRadius K) ⊆ K
 
-/-- Main proof, lines 328–332. The compact solid contains a positive-radius ball. -/
+/-- The compact solid contains a positive-radius ball. -/
 theorem solid_compact_interior {d n : ℕ} (hn : 0 < n) (a : Fin n → Space d)
     (w : Fin n → ℝ) (hw : ValidWeights w) (R : ℝ) (hR : 0 < R) :
     IsCompact (solid a w R) ∧ ∃ z r, 0 < r ∧ Metric.closedBall z r ⊆ solid a w R := by
@@ -252,7 +252,7 @@ theorem integral_log_G {d n : ℕ} (a : Fin n → Space d) (w : Fin n → ℝ)
   · simp [integral_const_mul]
   · exact fun i _ => (hi i).const_mul (w i)
 
-/-- Lines 333–340. The integrated logarithmic moment is bounded at both ends. -/
+/-- The integrated logarithmic moment is bounded at both ends. -/
 theorem log_moment_sandwich {d n : ℕ} (hd : 3 ≤ d) (a : Fin n → Space d)
     (w : Fin n → ℝ) (hw : ValidWeights w) (R : ℝ) (hR : 0 < R)
     (hM : EquilibriumMomentFact d) (ν : Measure (Space d))
@@ -285,7 +285,7 @@ theorem log_moment_sandwich {d n : ℕ} (hd : 3 ≤ d) (a : Fin n → Space d)
         exact Real.log_le_log (Finset.prod_pos (fun i _ => Real.rpow_pos_of_pos (dist_pos.mpr (hx' i)) _)) hx
       _ = _ := by simp
 
-/-- Lines 349–363. If every mark's sphere belongs to the solid, all locations coincide. -/
+/-- If every mark's sphere belongs to the solid, all locations coincide. -/
 theorem sphere_rigidity {d n : ℕ} (hd : 0 < d) (hn : 0 < n) (a : Fin n → Space d)
     (w : Fin n → ℝ) (hw : ValidWeights w) (R : ℝ) (hR : 0 < R)
     (hs : ∀ i, Metric.sphere (a i) R ⊆ solid a w R) : ∀ i j, a i = a j := by

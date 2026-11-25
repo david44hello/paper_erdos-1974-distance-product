@@ -1,11 +1,11 @@
 # Distance-product proof audit notes
-Version 1.10 — November 19, 2026. Scope of the final v1.42 short paper and its unit-threshold infimum.
+Short paper v1.92 — scope of the proof and the unit-threshold infimum.
 
 In the direct proof, CoareaSlabs applies the coarea formula to the finite-charge potential U. PuncturedGauss applies the divergence theorem to its smooth punctured superlevels. SurfaceFinite says that a smooth compact regular level surface of U has finite area. The integrated differential inequality uses local absolute continuity of W as well as its almost-everywhere derivative estimate.
 
 The capacity proof uses the equality clause of Clark–Laugesen in one direction: equality gives sphere inclusion for every mark. The converse would impose a further capacity-zero restriction outside the ball. Paper.equality_capacity_spheres is the coverage link between the volume equality and the sphere inclusion.
 
-The mathematical short PDF is pinned by SHA-256 e5b7c13b0a0c0ddc5fe0750b32740e2487252842844e4c33c5a3c41df9bc2948. The current reader incorporates the name-only ending and a revised expanded attachment. Both versions have the same short mathematical text and line locations. The guide tag input still refers to v1.22 in these copies.
+The [short-paper crosswalk](JOURNAL_CROSSWALK.md) identifies the mathematical sources. The [claim map](CLAIM_MAP.tsv) gives their line ranges for each audited declaration.
 
 | Root | Scope of checked deduction |
 |---|---|
@@ -28,7 +28,7 @@ The audit contains 175 public theorems. It classifies 124 as PROVED, 46 as PROVE
 
 ## Bounds for real upper limits
 
-Paper.sequence_cost_limsup, Paper.fixed_delta_cost_limsup and Paper.sequence_inradius_loss_limsup each prove eventual upper boundedness of the same real sequence used in their limsup. The limsup conjunct in v1.02 gave only the numerical upper bound. A separate conjunct gave convergence of gamma/D to one. An unbounded real sequence can have a computed real limsup of zero in Lean. The [control](scripts/RealLimsupControl.lean) proves this for the natural numbers embedded in the reals. All three strengthened theorems take the seven paper-level stability hypotheses.
+Paper.sequence_cost_limsup, Paper.fixed_delta_cost_limsup and Paper.sequence_inradius_loss_limsup each prove eventual upper boundedness of the same real sequence used in their limsup. The numerical upper bound on a real limsup requires a separate boundedness statement to express the asymptotic estimate. An unbounded real sequence can have a computed real limsup of zero in Lean. The [control](scripts/RealLimsupControl.lean) proves this for the natural numbers embedded in the reals. All three theorems take the seven paper-level stability hypotheses.
 
 For the fixed-width cost estimate the theorem first produces a positive constant C and a positive upper cutoff for δ. At each admissible δ the denominator 1/6 − Cδ is positive. The proof uses the common trial center at that width before taking the upper limit. For the inradius sequence the proof applies the uniform estimate to positive deficits tending to zero. [Exact statements and proofs](ErdosVolume/Paper/StabilityLimits.lean)
 

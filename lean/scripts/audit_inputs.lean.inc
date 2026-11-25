@@ -1,3 +1,4 @@
+/-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 /- Inspect binders in the elaborated theorem type. The named propositions are the
 potential theory, flux and stability inputs identified in AUDIT_NOTES.md. -/
 namespace ErdosVolumeAudit

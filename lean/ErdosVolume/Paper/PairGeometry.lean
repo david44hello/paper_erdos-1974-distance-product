@@ -1,6 +1,6 @@
 import ErdosVolume.Paper.Illustrations
 
-/-! Two equal marks in arbitrary dimension and the sharp length on the real line. -/
+/-! Two equal marks in arbitrary dimension and the sharp length on the real line. Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 noncomputable section
 open Metric Set MeasureTheory
 open scoped RealInnerProductSpace ENNReal

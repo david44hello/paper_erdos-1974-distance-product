@@ -16,7 +16,7 @@ theorem finite_volume {d n : ℕ} (hd : 3 ≤ d) (hn : 0 < n)
     volume (solid a w R) < ⊤ ∧ vol (solid a w R) ≤ omega d * R ^ d ∧
       (vol (solid a w R) = omega d * R ^ d ↔ ∀ i j, a i = a j) := by sorry
 
-/-- Main text lines 49–55, 316–318: co-located marks give the closed ball itself. -/
+/-- Co-located marks give the closed ball itself. -/
 theorem coincident_solid {d n : ℕ} (w : Fin n → ℝ) (hw : ValidWeights w)
     (z : Space d) (R : ℝ) :
     (∀ x : Space d, G (fun _ => z) w x = dist x z) ∧
@@ -34,7 +34,7 @@ def EquilibriumBallLaw (d : ℕ) : Prop :=
     equilibrium (closedBall z r) (sphereProbability z r) ∧
     ∀ ν, equilibrium (closedBall z r) ν → ν = sphereProbability z r
 
-/-- Main text lines 328–335. The ball's logarithmic moment at its center. -/
+/-- The ball's logarithmic moment at its center. -/
 theorem ball_log_moment {d : ℕ} (hd : 3 ≤ d) (hb : EquilibriumBallLaw d)
     (a : Space d) (r : ℝ) (hr : 0 < r) (ν : Measure (Space d))
     (hν : equilibrium (closedBall a r) ν) :
@@ -52,19 +52,19 @@ theorem ball_log_moment {d : ℕ} (hd : 3 ≤ d) (hb : EquilibriumBallLaw d)
     _ = ∫ _ : Space d, Real.log r ∂ν := integral_congr_ae (hrad.mono fun _ hx => congrArg Real.log hx)
     _ = _ := by simp
 
-/-- Main text lines 333–340: logarithm of the finite weighted product a.e. -/
+/-- Logarithm of the finite weighted product a.e. -/
 theorem integral_log_product {d n : ℕ} (a : Fin n → Space d) (w : Fin n → ℝ)
     (ν : Measure (Space d)) (ha : ∀ i, ν ({a i} : Set (Space d)) = 0)
     (hi : ∀ i, Integrable (fun x => Real.log (dist x (a i))) ν) :
     ∫ x, Real.log (G a w x) ∂ν = ∑ i, w i * ∫ x, Real.log (dist x (a i)) ∂ν :=
   integral_log_G a w ν ha hi
 
-/-- Main text lines 349–354: equality in a positive weighted sum propagates to each mark. -/
+/-- Equality in a positive weighted sum propagates to each mark. -/
 theorem each_moment_eq {n : ℕ} (w v : Fin n → ℝ) (m : ℝ) (hw : ValidWeights w)
     (hl : ∀ i, m ≤ v i) (hu : ∑ i, w i * v i ≤ m) : ∀ i, v i = m :=
   weighted_equality w v m hw hl hu
 
-/-- Main text lines 354–363: squared distance at a supporting direction. -/
+/-- Squared distance at a supporting direction. -/
 theorem extreme_distance {d : ℕ} (a b u : Space d) (hu : ‖u‖ = 1)
     (hab : b ≠ a) (hproj : 0 ≤ inner ℝ u (a-b)) (R : ℝ) (hR : 0 < R) :
     dist (a + R • u) b ^ 2 = R^2 + 2*R*(inner ℝ u (a-b)) + ‖a-b‖^2 ∧
@@ -83,7 +83,7 @@ theorem compact_capacity_outer {d : ℕ} (K : Set (Space d)) (hK : IsCompact K) 
     dirichletCap K = sInf {v | ∃ U : Set (Space d), IsOpen U ∧ Bornology.IsBounded U ∧
       K ⊆ U ∧ dirichletCap U = v} := dirichlet_outer K
 
-/-- Inradius lines 32–39: Euclidean unit ball normalization. -/
+/-- Euclidean unit ball normalization. -/
 theorem omega_three : omega 3 = 4 * Real.pi / 3 := by
   rw [omega, vol, EuclideanSpace.volume_ball_fin_three]
   simp [ENNReal.toReal_ofReal (show 0 ≤ Real.pi * 4 / 3 by positivity), mul_comm]
@@ -120,7 +120,7 @@ theorem erdos_product_given (hO : OpenIsoFact 3) (hN : CapacityNormalization 3)
   simpa [omega_three] using volume_capacity (by decide) hn hO hN hB hE hM hS
     a _ (uniform_weights hn) 1 one_pos
 
-/-- Main text lines 30–35: sharp uniform bound and sharpness in the same normalization.
+/-- Sharp uniform bound and sharpness in the same normalization.
 The explicit epsilon statement and sharpness rows remain individually auditable. -/
 theorem first_order_radius (R : ℝ) (hR : 0 < R) :
     (∀ ε > (0 : ℝ), ∃ h > 0, ∀ μ, admissible μ → 0 < deficit μ R → deficit μ R ≤ h →

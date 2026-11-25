@@ -12,7 +12,7 @@ def logPos {d : ℕ} (x a : Space d) : ℝ≥0∞ := ENNReal.ofReal (Real.log (d
 def logNeg {d : ℕ} (x a : Space d) : ℝ≥0∞ :=
   if x = a then ⊤ else ENNReal.ofReal (-Real.log (dist x a))
 
-/-- Inradius lines 17–31. Includes every compact source, even with infinite negative log integral. -/
+/-- Includes every compact source, even with infinite negative log integral. -/
 theorem general_log_bridge (μ : Measure (Space 3)) (hμ : admissible μ) (x : Space 3) :
     let p := ∫⁻ a, logPos x a ∂μ
     let n := ∫⁻ a, logNeg x a ∂μ

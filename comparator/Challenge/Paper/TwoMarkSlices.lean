@@ -1,4 +1,5 @@
 import Challenge.Paper.Illustrations
+/-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 
 noncomputable section
 open MeasureTheory Metric Set Filter

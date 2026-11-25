@@ -240,7 +240,7 @@ private theorem solid3_regular (μ : Law) (hμ : admissible μ) :
     linarith
   exact ⟨measurableSet_le hm measurable_const,(measure_mono hsub).trans_lt measure_closedBall_lt_top⟩
 
-/-- Inradius, lines 138–150. Coercivity and continuity give a minimizer; the vector integral there vanishes. -/
+/-- Coercivity and continuity give a minimizer; the vector integral there vanishes. -/
 theorem stability_center (μ : Law) (hμ : admissible μ) :
     Continuous (cost μ) ∧ Tendsto (cost μ) (cocompact X) atTop ∧
     (∃ z, cost μ z = J μ) ∧ ∀ z, cost μ z = J μ →
@@ -318,7 +318,7 @@ theorem stability_center (μ : Law) (hμ : admissible μ) :
   change 2 * _ = 0 at hv
   linarith
 
-/-- Inradius, lines 146–166. Both Jensen inequalities, the exact quadratic identity and the inscribed ball. -/
+/-- Both Jensen inequalities, the exact quadratic identity and the inscribed ball. -/
 theorem stability_center_ball (μ : Law) (hμ : admissible μ) (z : X) (hz : cost μ z = J μ) :
     0 ≤ J μ ∧ Real.exp (-J μ) ≤ M μ z ∧
     (∀ v : X, ‖v‖ ≤ 1 →
@@ -389,7 +389,7 @@ theorem stability_center_ball (μ : Law) (hμ : admissible μ) (z : X) (hz : cos
   have h2 := mul_self_le_mul_self (norm_nonneg (x-z)) hx'
   nlinarith [sq_nonneg (gMeasure μ x - 1)]
 
-/-- Inradius, lines 170–180. Scalar error estimates at zero. -/
+/-- Scalar error estimates at zero. -/
 theorem stability_scalar_limits :
     (∃ C δ : ℝ, 0 < C ∧ 0 < δ ∧ ∀ t ∈ Set.Icc 0 δ,
       |(1 - Real.sqrt (2 - Real.exp t)) - t/2| ≤ C*t^2) ∧
@@ -425,7 +425,7 @@ theorem stability_scalar_limits :
   · have h := (((hasDerivAt_id (0:ℝ)).const_sub 1).log (by norm_num)).neg.tendsto_slope_zero_right
     simpa [div_eq_mul_inv,mul_comm] using h
 
-/-- Inradius, lines 205–211. Compact exhaustion at the printed error scale. -/
+/-- Compact exhaustion at the printed error scale. -/
 theorem stability_compact_piece (μ : Law) (hμ : admissible μ)
     (hD : 0 < deficit μ 1) (hD' : deficit μ 1 < 1) :
     ∃ K : Set X, IsCompact K ∧ K ⊆ measureSolid μ 1 ∧
@@ -453,7 +453,7 @@ theorem stability_compact_piece (μ : Law) (hμ : admissible μ)
     ((ENNReal.ofReal_lt_iff_lt_toReal (mul_nonneg hw.le (Real.exp_pos _).le) hfin.ne).mpr hlt)
   exact ⟨K,hK,hsub,((ENNReal.ofReal_lt_iff_lt_toReal (mul_nonneg hw.le (Real.exp_pos _).le) hK.measure_ne_top).mp hgt).le⟩
 
-/-- Inradius, lines 210–214. The inverse-potential bound removes the pole before real integration. -/
+/-- The inverse-potential bound removes the pole before real integration. -/
 theorem stability_log_moment (ν : Law) (hν : admissible ν) (c : ℝ) (hc : 0 < c)
     (hpot : ∀ a, potential ν a ≤ ENNReal.ofReal c⁻¹) (a : X) :
     ν {a} = 0 ∧ Integrable (fun x => Real.log (dist x a)) ν ∧ Real.log c ≤ g ν a := by
@@ -585,7 +585,7 @@ private theorem sigma_map_isometry (U : X ≃ₗᵢ[ℝ] X) : Measure.map U sigm
   rw [form _ (hU hA),form _ hA,hsec,U.measurePreserving.measure_preimage_emb U.toHomeomorph.measurableEmbedding]
 
 
-/-- Inradius, lines 212–219. Absolute integrability on the product and the logarithm identity almost everywhere. -/
+/-- Absolute integrability on the product and the logarithm identity almost everywhere. -/
 theorem stability_fubini (μ ν : Law) (hμ : admissible μ) (hν : admissible ν)
     (K : Set X) (hK : IsCompact K) (hsub : K ⊆ measureSolid μ 1) (hνK : ν Kᶜ = 0)
     (c : ℝ) (hc : 0 < c) (hpot : ∀ a, potential ν a ≤ ENNReal.ofReal c⁻¹) :
@@ -621,7 +621,7 @@ theorem stability_fubini (μ ν : Law) (hμ : admissible μ) (hν : admissible �
     have hh : Real.log c ≤ ∫ a, g ν a ∂μ := by simpa [g,f] using hbound
     linarith)
 
-/-- Inradius, lines 205–224. An equilibrium measure on a compact subset with the required volume and beta bounds. -/
+/-- An equilibrium measure on a compact subset with the required volume and beta bounds. -/
 theorem stability_piece_bounds (iso : CompactIso) (existsEq : EqExists) (frost : Frostman)
     (μ : Law) (hμ : admissible μ) (hD : 0 < deficit μ 1) (hD' : deficit μ 1 < 1) :
     ∃ (K : Set X) (ν : Law), IsCompact K ∧ K ⊆ measureSolid μ 1 ∧
@@ -655,7 +655,7 @@ theorem stability_piece_bounds (iso : CompactIso) (existsEq : EqExists) (frost :
     push_cast at hlog
     linarith
 
-/-- Inradius, lines 219–229. The compact-set comparison applies to every positive-volume compact subset. -/
+/-- The compact-set comparison applies to every positive-volume compact subset. -/
 theorem stability_compact_comparison (iso : CompactIso) (existsEq : EqExists) (frost : Frostman)
     (μ : Law) (hμ : admissible μ) (K : Set X) (hK : IsCompact K) (hvol : 0 < vol K)
     (hsub : K ⊆ measureSolid μ 1) :
@@ -673,7 +673,7 @@ theorem stability_compact_comparison (iso : CompactIso) (existsEq : EqExists) (f
   exact ⟨hK.measure_lt_top,hc,(stability_fubini μ ν hμ hν K hK hsub heq.2.1 (capRadius K) hc
     (frost K ν hK hc heq)).2.2.2.2,he⟩
 
-/-- Inradius, lines 225–229. Volume upper bound for general compactly supported source probabilities. -/
+/-- Volume upper bound for general compactly supported source probabilities. -/
 theorem stability_measure_volume (iso : CompactIso) (existsEq : EqExists) (frost : Frostman)
     (μ : Law) (hμ : admissible μ) :
     volume (measureSolid μ 1) < ⊤ ∧ vol (measureSolid μ 1) ≤ omega 3 := by
@@ -688,7 +688,7 @@ theorem stability_measure_volume (iso : CompactIso) (existsEq : EqExists) (frost
   have hp : capRadius K ^ 3 ≤ 1 := by simpa using pow_le_pow_left₀ hc.le hc1 3
   linarith [mul_le_mul_of_nonneg_left hp hw.le]
 
-/-- Inradius, lines 231–237. The inverse-distance formula includes the pole; the log formula is off the pole. -/
+/-- The inverse-distance formula includes the pole; the log formula is off the pole. -/
 theorem stability_rescale_dist (c : ℝ) (hc : 0 < c) (x a : X) :
     newtonKernel (c⁻¹ • x) (c⁻¹ • a) = ENNReal.ofReal c * newtonKernel x a ∧
     (x ≠ a → Real.log (dist (c⁻¹ • x) (c⁻¹ • a)) = Real.log (dist x a) - Real.log c) := by
@@ -709,7 +709,7 @@ theorem stability_rescale_dist (c : ℝ) (hc : 0 < c) (x a : X) :
     rw [hd, Real.log_mul (inv_ne_zero hc.ne') (dist_pos.mpr h).ne', Real.log_inv]
     ring
 
-/-- Inradius, lines 238–246. Normalize the equilibrium law and center the two laws at the same point. -/
+/-- Normalize the equilibrium law and center the two laws at the same point. -/
 theorem stability_normalize (μ ν : Law) (hμ : admissible μ) (hν : admissible ν)
     (c ε : ℝ) (hc : 0 < c) (hε : 0 < ε)
     (hp : ∀ a, potential ν a ≤ ENNReal.ofReal c⁻¹) (havg : (∫ a, g ν a ∂μ) ≤ 0) :
@@ -777,7 +777,7 @@ theorem stability_normalize (μ ν : Law) (hμ : admissible μ) (hν : admissibl
     rw [integral_map hS.aemeasurable (measurable_log_moment _).aestronglyMeasurable]
     simpa only [sg] using hav
 
-/-- Inradius, lines 247–248. The two-ended coercivity and the unique zero of phi. -/
+/-- The two-ended coercivity and the unique zero of phi. -/
 theorem stability_phi_shape :
     (∀ s : ℝ, 0 < s → 0 ≤ phi s ∧ (phi s = 0 ↔ s = 1)) ∧
     Tendsto phi (𝓝[>] 0) atTop ∧ Tendsto phi atTop atTop := by
@@ -811,7 +811,7 @@ theorem stability_phi_shape :
     unfold phi
     linarith [inv_pos.mpr hs]
 
-/-- Inradius, lines 249–257. Nonnegative phi integral and concentration in every fixed spherical annulus. -/
+/-- Nonnegative phi integral and concentration in every fixed spherical annulus. -/
 theorem stability_phi_integral (ν : Law) (hν : admissible ν) (h : ∀ a, potential ν a ≤ 1) (a : X) :
     Integrable (fun x => phi (dist x a)) ν ∧ 0 ≤ (∫ x, phi (dist x a) ∂ν) ∧
       (∫ x, phi (dist x a) ∂ν) ≤ g ν a := by
@@ -826,7 +826,7 @@ theorem stability_phi_integral (ν : Law) (hν : admissible ν) (h : ∀ a, pote
   simp only [integral_const,probReal_univ,one_smul]
   linarith
 
-/-- Inradius, lines 254–258. Every fixed annulus contains asymptotically full mass. -/
+/-- Every fixed annulus contains asymptotically full mass. -/
 theorem stability_annulus_mass (ν : ℕ → Law) (hn : Normalized ν) :
     ∀ δ : ℝ, 0 < δ → Tendsto (fun j => ν j (ann δ)) atTop (𝓝 1) := by
   intro δ hδ
@@ -890,7 +890,7 @@ theorem stability_annulus_mass (ν : ℕ → Law) (hn : Normalized ν) :
   apply (ENNReal.tendsto_toReal_iff (fun j => measure_ne_top (ν j) _) (by norm_num)).mp
   simpa [measureReal_compl hm, measureReal_def] using hone
 
-/-- Inradius, lines 258–261. Tightness and inequalities for each weak subsequential limit. -/
+/-- Tightness and inequalities for each weak subsequential limit. -/
 theorem stability_weak_limit (ν : ℕ → Law) (hn : Normalized ν) :
     IsTightMeasureSet (Set.range ν) ∧
     ∀ (k : ℕ → ℕ) (limLaw : Law), StrictMono k → IsProbabilityMeasure limLaw →
@@ -965,7 +965,7 @@ theorem stability_weak_limit (ν : ℕ → Law) (hn : Normalized ν) :
            simp only [potential,kernel3,dist_comm x]
          _ = 1 := by simp
 
-/-- Inradius, lines 260–264. Uniqueness identifies every weak limit with the uniform sphere law. -/
+/-- Uniqueness identifies every weak limit with the uniform sphere law. -/
 theorem stability_sphere_limit (uniqueEq : EqUnique) (ballLaw : BallLaw) (ν : ℕ → Law) (hn : Normalized ν) :
     (IsProbabilityMeasure sigma ∧ energy sigma = 1) ∧
     (∀ limLaw : Law, IsProbabilityMeasure limLaw → limLaw (Metric.sphere 0 1)ᶜ = 0 →
@@ -1001,7 +1001,7 @@ theorem stability_sphere_limit (uniqueEq : EqUnique) (ballLaw : BallLaw) (ν : �
   have heq : R = Q := Subtype.ext (h₁.2 (le_antisymm hen h₁.1))
   exact ⟨u ∘ v,heq ▸ hconv⟩
 
-/-- Inradius, lines 273–277, 297–299. Rotational invariance identifies the log moment about any center. -/
+/-- Rotational invariance identifies the log moment about any center. -/
 theorem stability_spherical_radial (a : X) : g sigma a = H ‖a‖ := by
   let b := ‖a‖ • e₁
   have hn : ‖a‖ = ‖b‖ := by simp [b,e₁,norm_smul,Real.norm_eq_abs]
@@ -1181,7 +1181,7 @@ private theorem trace3_average (μ : Law) {T : X → X →L[ℝ] X →L[ℝ] ℝ
   rw [integral_finsetSum _ (fun i _ => hii i)]
   exact Finset.sum_congr rfl fun i _ => by rw [ContinuousLinearMap.integral_apply hT,ContinuousLinearMap.integral_apply (hi i)]
 
-/-- Inradius, lines 273–288. Radial Laplacian identity for the spherical logarithmic moment. -/
+/-- Radial Laplacian identity for the spherical logarithmic moment. -/
 theorem stability_radial_lap (s : ℝ) (hs : s ∈ Set.Ioo 0 1) :
     radialLap H s = (∫ θ, (dist θ (s • e₁))⁻¹ ^ 2 ∂sigma) ∧
     (1+s^2)⁻¹ ≤ radialLap H s ∧
@@ -1344,7 +1344,7 @@ private theorem H_nonnegative {s : ℝ} (hs : s ∈ Set.Ico (0:ℝ) 1) : 0 ≤ H
   simp [H_zero,comparison] at h
   linarith [Real.log_nonneg (show 1 ≤ 1+s^2 by linarith [sq_nonneg s])]
 
-/-- Inradius, lines 273–290. Integration from zero and continuity at the unit sphere. -/
+/-- Integration from zero and continuity at the unit sphere. -/
 theorem stability_radial_gap :
     H 0 = 0 ∧ deriv H 0 = 0 ∧ comparison 0 = 0 ∧ deriv comparison 0 = 0 ∧
     StrictMonoOn (fun s => H s - comparison s) (Set.Icc 0 1) ∧ ContinuousAt H 1 ∧
@@ -1430,7 +1430,7 @@ theorem stability_radial_gap :
     simpa [Pi.pow_def,id_def,Function.comp_def] using h
   exact ⟨H_zero,H_deriv_zero,by simp [comparison],cder.deriv,mono,continuity,by simpa [f] using hi,sphere_distance⟩
 
-/-- Inradius, lines 273–277, 287–295. Spherical inversion and the strict inequality on the entire positive axis. -/
+/-- Spherical inversion and the strict inequality on the entire positive axis. -/
 theorem stability_sphere_H :
     (∀ s : ℝ, 1 < s → H s = Real.log s + H (1/s) ∧
       H s - comparison s = H (1/s) - comparison (1/s) + (2/3 : ℝ)*Real.log s) ∧
@@ -1478,7 +1478,7 @@ theorem stability_sphere_H :
     have hi : 0 < 1/s := one_div_pos.mpr hs
     linarith [(invert s hs').2, small (1/s) hi ((div_lt_one hs).mpr hs').le,Real.log_pos hs']
 
-/-- Inradius, lines 297–312. Uniform errors from truncating below log eta, including moving poles. -/
+/-- Uniform errors from truncating below log eta, including moving poles. -/
 theorem stability_truncation :
     (∃ C : ℝ, 0 < C ∧ ∀ s ∈ Set.Ioo (0:ℝ) 1, |Real.log s| ≤ C / Real.sqrt s) ∧
     ∃ C : ℝ, 0 < C ∧ ∀ (ν : Law), admissible ν → (∀ a, potential ν a ≤ 1) →
@@ -1523,7 +1523,7 @@ theorem stability_truncation :
            _ ≤ _ := by
                simpa using (Real.le_sqrt_of_sq_le (show η^2 ≤ η by nlinarith [mul_nonneg hη.1.le (sub_nonneg.mpr hη.2.le)]))
 
-/-- Inradius, lines 297–312. Eventual lower bounds express a liminf even if log moments grow without bound. -/
+/-- Eventual lower bounds express a liminf even if log moments grow without bound. -/
 theorem stability_moving_center (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν sigma)
     (a : X) (ha : a ≠ 0) (p : ℕ → X) (hp : Tendsto p atTop (𝓝 a)) :
     weak (fun j => shifted (p j) (ν j)) (shifted a sigma) ∧
@@ -1608,7 +1608,7 @@ theorem stability_moving_center (ν : ℕ → Law) (hn : Normalized ν) (hw : we
   rw [← stability_spherical_radial a]
   linarith
 
-/-- Inradius, lines 314–320. The strict spherical gap is uniform on every compact radial annulus. -/
+/-- The strict spherical gap is uniform on every compact radial annulus. -/
 theorem stability_compact_gap (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν sigma)
     (δ A : ℝ) (hδ : 0 < δ) (hA : δ < A) :
     ∀ᶠ j in atTop, ∀ a : X, δ ≤ ‖a‖ → ‖a‖ ≤ A → L a / 6 ≤ g (ν j) a := by
@@ -1637,7 +1637,7 @@ theorem stability_compact_gap (ν : ℕ → Law) (hn : Normalized ν) (hw : weak
   dsimp only [ε] at *
   linarith
 
-/-- Inradius, lines 320–334. Tail bound, its error estimate, and the resulting uniform exterior inequality. -/
+/-- Tail bound, its error estimate, and the resulting uniform exterior inequality. -/
 theorem stability_exterior (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν sigma) :
     Tendsto (fun j => ν j (Metric.ball 0 2)) atTop (𝓝 1) ∧
     (∃ C : ℝ, 0 < C ∧ ∀ s : ℝ, 0 < s → (max 0 (-Real.log s))^2 ≤ C/s) ∧
@@ -1761,7 +1761,7 @@ theorem stability_exterior (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν
     have logp := Real.log_pos (by linarith : 1 < ‖a‖-2)
     nlinarith [mul_le_mul_of_nonneg_right hmass.le logp.le,mul_le_mul_of_nonneg_left sqrtle cp.le]
 
-/-- Inradius, lines 340–350. Uniform bilinear bound on the error of the pointwise Hessian. -/
+/-- Uniform bilinear bound on the error of the pointwise Hessian. -/
 theorem stability_hessian_kernel :
     deriv phi 1 = 0 ∧ deriv (deriv phi) 1 = 1 ∧
     ∃ C : ℝ, 0 < C ∧ ∀ δ ∈ Set.Ioo (0:ℝ) (1/8), ∀ x ∈ ann δ, ∀ a : X, ‖a‖ ≤ δ →
@@ -1915,7 +1915,7 @@ private theorem sigma_second (u v : X) :
   rw [qeq,qeq,qeq,norm_add_sq_real] at polar
   linarith
 
-/-- Inradius, lines 350–356. The limiting annular second moment is the bilinear form I/3. -/
+/-- The limiting annular second moment is the bilinear form I/3. -/
 theorem stability_annular_second_moment (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν sigma)
     (δ : ℝ) (hδ : δ ∈ Set.Ioo (0:ℝ) (1/8)) :
     sigma (frontier (ann δ)) = 0 ∧ ∀ u v : X,
@@ -2054,7 +2054,7 @@ private theorem form_converges {B : ℕ → X →L[ℝ] X →L[ℝ] ℝ} {A : X 
   apply emb.isEmbedding.tendsto_nhds_iff.mpr
   exact tendsto_pi_nhds.mpr fun i => tendsto_pi_nhds.mpr fun k => h (b i) (b k)
 
-/-- Inradius, lines 336–362. A single O(delta) constant and the fixed-delta large-index loss. -/
+/-- A single O(delta) constant and the fixed-delta large-index loss. -/
 theorem stability_annular_curvature (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν sigma) :
     (∀ (j : ℕ) (δ : ℝ) (a : X), 0 ≤ F (ν j) δ a ∧ F (ν j) δ a ≤ g (ν j) a) ∧
     ∃ (C δ₀ : ℝ), 0 < C ∧ 0 < δ₀ ∧ δ₀ ≤ 1/8 ∧
@@ -2120,7 +2120,7 @@ theorem stability_annular_curvature (ν : ℕ → Law) (hn : Normalized ν) (hw 
   dsimp only [b]
   nlinarith [(abs_le.mp op).1]
 
-/-- Inradius, lines 364–374. A constrained minimizer, its first variation, the Taylor bound and convergence. -/
+/-- A constrained minimizer, its first variation, the Taylor bound and convergence. -/
 theorem stability_trial_min (ν : ℕ → Law) (hn : Normalized ν)
     (δ : ℝ) (hδ : δ ∈ Set.Ioo (0:ℝ) (1/8)) (b : ℕ → ℝ)
     (hb : ∃ c : ℝ, 0 < c ∧ ∀ᶠ j in atTop, c ≤ b j)
@@ -2197,7 +2197,7 @@ theorem stability_trial_min (ν : ℕ → Law) (hn : Normalized ν)
     exact Real.le_sqrt_of_sq_le ((le_div_iff₀ hc).mpr (by nlinarith [mul_le_mul_of_nonneg_right hj' (sq_nonneg ‖z j‖)]))
   · simpa using (hn.2.div_const c).sqrt
 
-/-- Inradius, lines 373–384. The logarithmic cost and the loss for shifting the exterior bound. -/
+/-- The logarithmic cost and the loss for shifting the exterior bound. -/
 theorem stability_shift_loss :
     (∀ a : X, L a ≤ ‖a‖^2) ∧ LipschitzWith 1 L ∧
     (∀ (δ : ℝ) (z a : X), 0 < δ → δ ≤ ‖a‖ →
@@ -2245,7 +2245,7 @@ theorem stability_shift_loss :
   · intro δ z hδ hz
     simpa using hz.norm.div_const (Real.log (1+δ^2))
 
-/-- Inradius, lines 373–394. Interior and exterior bounds about one center, followed by their minimum. -/
+/-- Interior and exterior bounds about one center, followed by their minimum. -/
 theorem stability_join_at_center (ν : Law) (δ b : ℝ) (z : X) (hδ : 0 < δ) (hb : 0 ≤ b)
     (hi : ∀ a : X, ‖a‖ ≤ δ → b*‖a-z‖^2 ≤ g ν a)
     (ho : ∀ a : X, δ ≤ ‖a‖ → L a/6 ≤ g ν a) :
@@ -2272,7 +2272,7 @@ theorem stability_join_at_center (ν : Law) (δ b : ℝ) (z : X) (hδ : 0 < δ) 
   · apply (mul_le_mul_of_nonneg_right (min_le_right _ _) hnn).trans
     simpa only [div_mul_eq_mul_div,one_mul] using hout a ha
 
-/-- Inradius, lines 382–394. The exterior and interior estimates use the same point for every mark. -/
+/-- The exterior and interior estimates use the same point for every mark. -/
 theorem stability_common_center (ν : ℕ → Law) (hn : Normalized ν) (hw : weak ν sigma) :
     (∃ C δ₀ : ℝ, 0 < C ∧ 0 < δ₀ ∧ ∀ δ ∈ Set.Ioo (0:ℝ) δ₀,
       ∃ z : ℕ → X, (∀ j, ‖z j‖ ≤ δ) ∧ Tendsto z atTop (𝓝 0) ∧
@@ -2318,7 +2318,7 @@ theorem stability_common_center (ν : ℕ → Law) (hn : Normalized ν) (hw : we
   refine ⟨z j,fun a => (mul_le_mul_of_nonneg_right (by linarith : 1/6-ε ≤ 1/6-C*δ-ε/2)
     (Real.log_nonneg (by change 1 ≤ 1+‖a-z j‖^2; linarith [sq_nonneg ‖a-z j‖]))).trans (hj a)⟩
 
-/-- Inradius, lines 396–403. Average and return to the original coordinates. -/
+/-- Average and return to the original coordinates. -/
 theorem stability_unscale_cost (μ ν : Law) (hμ : admissible μ) (hν : admissible ν)
     (hp : ∀ a, potential ν a ≤ 1) (c b β : ℝ) (p z : X) (hc : 0 < c) (hc' : c ≤ 1)
     (hb : 0 < b) (hz : ∀ a, b*L (a-z) ≤ g ν a)
@@ -2369,7 +2369,7 @@ theorem stability_unscale_cost (μ ν : Law) (hμ : admissible μ) (hν : admiss
   have hj : J μ ≤ cost μ (c • (z+p)) := csInf_le low (Set.mem_range_self _)
   exact (mul_le_mul_of_nonneg_left (hj.trans hcost) hb.le).trans hf
 
-/-- Inradius, lines 170–180, 404–410. Sequence form and uniform epsilon form of the limsup bound. -/
+/-- Sequence form and uniform epsilon form of the limsup bound. -/
 theorem stability_cost_upper (iso : CompactIso) (existsEq : EqExists) (frost : Frostman)
     (uniqueEq : EqUnique) (ballLaw : BallLaw) :
     (∀ μ : ℕ → Law, (∀ j, admissible (μ j) ∧ 0 < deficit (μ j) 1 ∧ deficit (μ j) 1 < 1) →
@@ -2442,7 +2442,7 @@ theorem stability_cost_upper (iso : CompactIso) (existsEq : EqExists) (frost : F
   obtain ⟨j,hj⟩ := (seq μ (fun j => ⟨hm j,hpos j,lt1 j⟩) hg ε hε).exists
   exact (failure j).not_ge hj
 
-/-- Inradius, lines 53–57, 406–412; main theorem's uniform upper direction at every positive threshold. -/
+/-- Main theorem's uniform upper direction at every positive threshold. -/
 theorem stability_uniform_upper (iso : CompactIso) (existsEq : EqExists) (frost : Frostman)
     (uniqueEq : EqUnique) (ballLaw : BallLaw) (R : ℝ) (hR : 0 < R) :
     ∀ ε : ℝ, 0 < ε → ∃ h : ℝ, 0 < h ∧ ∀ μ : Law, admissible μ →

@@ -1,77 +1,77 @@
-# Version 1.10. Mathematical text v1.42, with the name-only reader addendum.
+# Short paper v1.92. Main = erdos_volume.tex. Inradius = inradius.tex.
 Lean declaration	Paper location or helper role
-ErdosVolume.solid_compact_interior	Main 328–331
-ErdosVolume.energy_bounds_of_radius_pos	Main 328–331
-ErdosVolume.solid_energy	Main 328–331
-ErdosVolume.dirichlet_outer	Main 343–347
-ErdosVolume.omega_positive	Main 159–170
-ErdosVolume.closedBall_volume	Main 49–56, 316–318
-ErdosVolume.compact_isocapacity	Main 341–350
-ErdosVolume.integral_log_G	Main 333–339
-ErdosVolume.log_moment_sandwich	Main 333–339
-ErdosVolume.sphere_rigidity	Main 351–363
-ErdosVolume.weighted_equality	Main 349–357
-ErdosVolume.capacity_sphere_consequence	Main 349–357
-ErdosVolume.volume_capacity	Main 24–30, 66, 159–170, 177–180, 321–363; Main 26, 369–371; Inradius 6–7
-ErdosVolume.Flux.combine_marks	Main 262–269
-ErdosVolume.Flux.at_mark	Main 241–250
-ErdosVolume.Flux.off_formula	Main 241–250
-ErdosVolume.Flux.amgm	Main 241–250
-ErdosVolume.Flux.inclusion	Main 241–250
-ErdosVolume.Flux.geometry	Main 252–258
-ErdosVolume.Flux.regular_frontier	Main 252–258
-ErdosVolume.Flux.smooth_harmonic	Main 255–269, 271–280
-ErdosVolume.Flux.critical_witness	Main 271–280
-ErdosVolume.Flux.outer_derivative	Main 262–269
-ErdosVolume.Flux.null_sets	Main 271–280
-ErdosVolume.Flux.ae_regular	Main 282
-ErdosVolume.Flux.shell_self	Main 262–269
-ErdosVolume.Flux.shell_other	Main 262–269
-ErdosVolume.Flux.flux_identity	Main 256–269
-ErdosVolume.Flux.level_derivative	Main 271–282
-ErdosVolume.Flux.level_inequalities	Main 282–286
-ErdosVolume.Flux.scaled_derivative	Main 292–294
-ErdosVolume.Flux.exhaustion	Main 295–298
-ErdosVolume.Flux.integrated	Main 292–300
-ErdosVolume.Flux.radius_at_threshold	Main 296–300
-ErdosVolume.Flux.ray_dist	Main 305–314
-ErdosVolume.Flux.last_point	Main 305–314
-ErdosVolume.Flux.strict_amgm	Main 305–314
-ErdosVolume.Flux.beyond_last	Main 305–314
-ErdosVolume.Flux.strict_ball	Main 240–246, 305–316
-ErdosVolume.Flux.strict_volume	Main 240–246, 305–316
-ErdosVolume.Flux.coincident	Main 316–318
-ErdosVolume.Flux.direct_bound_eq	Main 24–30, 66, 159–170, 177–180, 238–246, 292–300, 305–319; Main 26, 369–371
-ErdosVolume.Flux.scaled_radius_absolute_continuity	Main 292–298
-ErdosVolume.Flux.level_surface_cauchy_schwarz	Main 282–294
+ErdosVolume.solid_compact_interior	Main 335–338
+ErdosVolume.energy_bounds_of_radius_pos	Main 335–338
+ErdosVolume.solid_energy	Main 335–338
+ErdosVolume.dirichlet_outer	Main 350–354
+ErdosVolume.omega_positive	Main 164–175
+ErdosVolume.closedBall_volume	Main 54–61, 323–325
+ErdosVolume.compact_isocapacity	Main 348–357
+ErdosVolume.integral_log_G	Main 340–346
+ErdosVolume.log_moment_sandwich	Main 340–346
+ErdosVolume.sphere_rigidity	Main 358–370
+ErdosVolume.weighted_equality	Main 356–364
+ErdosVolume.capacity_sphere_consequence	Main 356–364
+ErdosVolume.volume_capacity	Main 29–35, 71, 164–175, 182–184, 187, 328–370; Main 31, 376–378; Inradius 6–7
+ErdosVolume.Flux.combine_marks	Main 269–276
+ErdosVolume.Flux.at_mark	Main 248–257
+ErdosVolume.Flux.off_formula	Main 248–257
+ErdosVolume.Flux.amgm	Main 248–257
+ErdosVolume.Flux.inclusion	Main 248–257
+ErdosVolume.Flux.geometry	Main 259–265
+ErdosVolume.Flux.regular_frontier	Main 259–265
+ErdosVolume.Flux.smooth_harmonic	Main 262–276, 278–287
+ErdosVolume.Flux.critical_witness	Main 278–287
+ErdosVolume.Flux.outer_derivative	Main 269–276
+ErdosVolume.Flux.null_sets	Main 278–287
+ErdosVolume.Flux.ae_regular	Main 289
+ErdosVolume.Flux.shell_self	Main 269–276
+ErdosVolume.Flux.shell_other	Main 269–276
+ErdosVolume.Flux.flux_identity	Main 263–276
+ErdosVolume.Flux.level_derivative	Main 278–289
+ErdosVolume.Flux.level_inequalities	Main 289–293
+ErdosVolume.Flux.scaled_derivative	Main 299–301
+ErdosVolume.Flux.exhaustion	Main 302–305
+ErdosVolume.Flux.integrated	Main 299–307
+ErdosVolume.Flux.radius_at_threshold	Main 303–307
+ErdosVolume.Flux.ray_dist	Main 312–321
+ErdosVolume.Flux.last_point	Main 312–321
+ErdosVolume.Flux.strict_amgm	Main 312–321
+ErdosVolume.Flux.beyond_last	Main 312–321
+ErdosVolume.Flux.strict_ball	Main 247–253, 312–323
+ErdosVolume.Flux.strict_volume	Main 247–253, 312–323
+ErdosVolume.Flux.coincident	Main 323–325
+ErdosVolume.Flux.direct_bound_eq	Main 29–35, 71, 164–175, 182–184, 187, 245–253, 299–307, 312–326; Main 31, 376–378
+ErdosVolume.Flux.scaled_radius_absolute_continuity	Main 299–305
+ErdosVolume.Flux.level_surface_cauchy_schwarz	Main 289–301
 ErdosVolume.Paper.equilibrium_exists_for_stability	Inradius 205–229
 ErdosVolume.Paper.compact_iso_for_stability	Inradius 205–229
-ErdosVolume.Paper.uniform_upper_given	Main 24–35; Inradius 41–58, 407–412; Main 375–379, 381–388; Inradius 6–12
-ErdosVolume.Paper.sharp_stability_given	Main 24–35; Inradius 41–58, 407–412; Main 375–379, 381–388
-ErdosVolume.Paper.zero_deficit_rigidity	Main 381–387 (the endpoint of the threshold-one admissible family, including D = 0)
-ErdosVolume.Paper.pair_hits_volume_deficit	Main 381–390 (a sharp equal-pair competitor at each sufficiently small positive cutoff)
-ErdosVolume.Paper.discussion_sharp_infimum	Main 381–390 (the three-dimensional corollary; higher-dimensional claims are cited to the companion)
+ErdosVolume.Paper.uniform_upper_given	Main 29–40; Inradius 41–58, 407–412; Main 382–386, 388–395; Inradius 6–12
+ErdosVolume.Paper.sharp_stability_given	Main 29–40; Inradius 41–58, 407–412; Main 382–386, 388–395
+ErdosVolume.Paper.zero_deficit_rigidity	Main 388–394 (the endpoint of the threshold-one admissible family, including D = 0)
+ErdosVolume.Paper.pair_hits_volume_deficit	Main 388–397 (a sharp equal-pair competitor at each sufficiently small positive cutoff)
+ErdosVolume.Paper.discussion_sharp_infimum	Main 388–397 (the three-dimensional corollary; higher-dimensional claims are cited to the companion)
 ErdosVolume.Paper.minimum_cost_tends_zero	Inradius 170–179, 404–410
 ErdosVolume.Paper.cutoff_sup_at_least_one	Inradius 410–412
-ErdosVolume.Paper.equality_capacity_spheres	Main 349–357
-ErdosVolume.Paper.pair_axial_polynomial	Main 223–231
-ErdosVolume.Paper.transverse_strict	Main 223–231
-ErdosVolume.Paper.axial_interval	Main 230–236
-ErdosVolume.Paper.transverse_segment	Main 230–236
-ErdosVolume.Paper.missing_midplane	Main 230–236
-ErdosVolume.Paper.joined_to_mark	Main 230–236
-ErdosVolume.Paper.figure_two_components	Main 90–94, 223–236
-ErdosVolume.Paper.figure_lobe_balls	Main 90–94, 223–225
-ErdosVolume.Paper.figure_volume_loss	Main 90–94, 223–225
+ErdosVolume.Paper.equality_capacity_spheres	Main 356–364
+ErdosVolume.Paper.pair_axial_polynomial	Main 230–238
+ErdosVolume.Paper.transverse_strict	Main 230–238
+ErdosVolume.Paper.axial_interval	Main 237–243
+ErdosVolume.Paper.transverse_segment	Main 237–243
+ErdosVolume.Paper.missing_midplane	Main 237–243
+ErdosVolume.Paper.joined_to_mark	Main 237–243
+ErdosVolume.Paper.figure_two_components	Main 95–99, 230–243
+ErdosVolume.Paper.figure_lobe_balls	Main 95–99, 230–232
+ErdosVolume.Paper.figure_volume_loss	Main 95–99, 230–232
 ErdosVolume.Paper.figure_ball_cylinder	Inradius 73–101
 ErdosVolume.Paper.coalescent_deficits	Inradius 128–134
 ErdosVolume.Paper.journal_hessian_eigendirections	Inradius 341–353
 ErdosVolume.Paper.journal_shell_direction	Inradius 341–353
-ErdosVolume.Paper.pair_axis_reach	Main 98–106, 110–113
-ErdosVolume.Paper.pair_transverse_reach	Main 105–113
-ErdosVolume.Paper.line_pair_interval	Main 114–118
-ErdosVolume.Paper.line_pair_two_intervals	Main 119–124
-ErdosVolume.Paper.line_pair_optimum	Main 114–124
+ErdosVolume.Paper.pair_axis_reach	Main 103–111, 115–118
+ErdosVolume.Paper.pair_transverse_reach	Main 110–118
+ErdosVolume.Paper.line_pair_interval	Main 119–123
+ErdosVolume.Paper.line_pair_two_intervals	Main 124–129
+ErdosVolume.Paper.line_pair_optimum	Main 119–129
 ErdosVolume.Paper.general_log_bridge	Inradius 17–31
 ErdosVolume.Paper.pair_squared_mean	Inradius 73–90
 ErdosVolume.Paper.pair_outside_cylinder	Inradius 73–90
@@ -79,42 +79,42 @@ ErdosVolume.Paper.sup_nonempty	Inradius 41–51
 ErdosVolume.Paper.sup_bdd_given	Inradius 41–51
 ErdosVolume.Paper.sequence_inradius_loss_limsup	Inradius 407–412
 ErdosVolume.Paper.fixed_delta_cost_limsup	Inradius 404–412
-ErdosVolume.Paper.finite_volume	Main 159–170
-ErdosVolume.Paper.coincident_solid	Main 49–56, 90–91, 135–136, 316–318
-ErdosVolume.Paper.ball_log_moment	Main 330–335
-ErdosVolume.Paper.integral_log_product	Main 333–339
-ErdosVolume.Paper.each_moment_eq	Main 349–357
-ErdosVolume.Paper.extreme_distance	Main 354–363
-ErdosVolume.Paper.compact_capacity_outer	Main 343–347
-ErdosVolume.Paper.omega_three	Main 49–56, 167–170; Inradius 32–39
-ErdosVolume.Paper.erdos_product	Main 51–56, 68–73, 167–170
-ErdosVolume.Paper.erdos_product_given	Main 51–56, 68–73, 84–87, 167–170
-ErdosVolume.Paper.first_order_radius	Main 24–35; Inradius 41–58
+ErdosVolume.Paper.finite_volume	Main 164–175
+ErdosVolume.Paper.coincident_solid	Main 54–61, 95–96, 140–141, 323–325
+ErdosVolume.Paper.ball_log_moment	Main 337–342
+ErdosVolume.Paper.integral_log_product	Main 340–346
+ErdosVolume.Paper.each_moment_eq	Main 356–364
+ErdosVolume.Paper.extreme_distance	Main 361–370
+ErdosVolume.Paper.compact_capacity_outer	Main 350–354
+ErdosVolume.Paper.omega_three	Main 54–61, 172–175; Inradius 32–39
+ErdosVolume.Paper.erdos_product	Main 56–61, 73–78, 172–175
+ErdosVolume.Paper.erdos_product_given	Main 56–61, 73–78, 89–92, 172–175
+ErdosVolume.Paper.first_order_radius	Main 29–40; Inradius 41–58
 ErdosVolume.Paper.sequence_cost_limsup	Inradius 164–180
 ErdosVolume.Paper.discarded_log_chain	Inradius 297–312
 ErdosVolume.Paper.compact_piece_unit_bound	Inradius 220–229
 ErdosVolume.Paper.trial_inner_chain	Inradius 364–374
 ErdosVolume.Paper.original_trial_cost_chain	Inradius 182–202, 396–403
 ErdosVolume.Paper.trial_cost_six	Inradius 182–202, 390–412
-ErdosVolume.Paper.two_marks_on_line	Main 116–118 (the example t = 1 at marks −1 and 1)
-ErdosVolume.Paper.pair_intercepts	Main 98–113 (three-dimensional special case, 0 < t < 1); Inradius 73–91
+ErdosVolume.Paper.two_marks_on_line	Main 121–123 (the example t = 1 at marks −1 and 1)
+ErdosVolume.Paper.pair_intercepts	Main 103–118 (three-dimensional special case, 0 < t < 1); Inradius 73–91
 ErdosVolume.Paper.figure_pair_widths	Inradius 94–101
-ErdosVolume.Paper.planar_coincident_disk	Main 125–128 (two coincident marks); Main 198–212
-ErdosVolume.Paper.vertical_level_quartic	Main 216–221
-ErdosVolume.Paper.vertical_level_at_most_four	Main 216–221
-ErdosVolume.Paper.planar_pair_level_null	Main 216–221
-ErdosVolume.Paper.planar_scaled_closed	Main 203–212, 215–221
-ErdosVolume.Paper.two_mark_slice_identity	Main 182–192
-ErdosVolume.Paper.pair_section_subset	Main 193–196
-ErdosVolume.Paper.pair_section_empty	Main 193–196
-ErdosVolume.Paper.pair_section_area	Main 193–212
-ErdosVolume.Paper.unit_ball_section_area	Main 207–212
-ErdosVolume.Paper.spatial_pair_section	Main 182–192
-ErdosVolume.Paper.spatial_ball_section	Main 207–212
-ErdosVolume.Paper.distinct_pair_volume_by_slices	Main 24–30, 68–73, 84–87, 138–143, 182–213; Main 27–29, 369–374
-ErdosVolume.Paper.erdos_product_all_dim_given	Main 14, 19–25, 41–55, 62–66, 129–131, 150–157, 172–175, 369–371
-ErdosVolume.Paper.distinct_pair_strict_volume_given	Main 24–30, 68–73, 84–87, 138–143; Main 27–29, 369–374
-ErdosVolume.Paper.analytic_partial_zero_set	Main 271–280
+ErdosVolume.Paper.planar_coincident_disk	Main 130–133 (two coincident marks); Main 205–219
+ErdosVolume.Paper.vertical_level_quartic	Main 223–228
+ErdosVolume.Paper.vertical_level_at_most_four	Main 223–228
+ErdosVolume.Paper.planar_pair_level_null	Main 223–228
+ErdosVolume.Paper.planar_scaled_closed	Main 210–219, 222–228
+ErdosVolume.Paper.two_mark_slice_identity	Main 189–199
+ErdosVolume.Paper.pair_section_subset	Main 200–203
+ErdosVolume.Paper.pair_section_empty	Main 200–203
+ErdosVolume.Paper.pair_section_area	Main 200–219
+ErdosVolume.Paper.unit_ball_section_area	Main 214–219
+ErdosVolume.Paper.spatial_pair_section	Main 189–199
+ErdosVolume.Paper.spatial_ball_section	Main 214–219
+ErdosVolume.Paper.distinct_pair_volume_by_slices	Main 29–35, 73–78, 89–92, 143–148, 189–220; Main 32–34, 376–381
+ErdosVolume.Paper.erdos_product_all_dim_given	Main 19, 24–30, 46–60, 67–71, 134–136, 155–162, 177–180, 376–378
+ErdosVolume.Paper.distinct_pair_strict_volume_given	Main 29–35, 73–78, 89–92, 143–148; Main 32–34, 376–381
+ErdosVolume.Paper.analytic_partial_zero_set	Main 278–287
 ErdosVolume.Paper.outside_cylinder_product_bounds	Inradius 73–90
 ErdosVolume.atomic_g	Inradius 17–31
 ErdosVolume.trunc_log_continuous	Inradius 17–31
@@ -134,9 +134,9 @@ ErdosVolume.uniform_radial_error	Inradius 106–124
 ErdosVolume.axial_second_moment	Inradius 117–124
 ErdosVolume.pair_volume_fraction	Inradius 117–124
 ErdosVolume.pair_asymptotics	Inradius 106–124, 128–134
-ErdosVolume.pair_ratio_limit	Inradius 106–124, 128–134; Main 375–379, 388–390
-ErdosVolume.uniform_upper	Main 24–35; Inradius 41–58
-ErdosVolume.sharp_coefficient	Main 24–34; Inradius 41–50, 117–124, 407–412; Main 375–379, 388–390; Main 35; Inradius 6–12
+ErdosVolume.pair_ratio_limit	Inradius 106–124, 128–134; Main 382–386, 395–397
+ErdosVolume.uniform_upper	Main 29–40; Inradius 41–58
+ErdosVolume.sharp_coefficient	Main 29–39; Inradius 41–50, 117–124, 407–412; Main 382–386, 395–397; Main 40; Inradius 6–12
 ErdosVolume.worst_ratio_limit	Inradius 41–51
 ErdosVolume.sharp_stability	Inradius 41–51
 ErdosVolume.pair_cubic_radial_mean	Inradius 117–124
@@ -175,11 +175,11 @@ ErdosVolume.stability_unscale_cost	Inradius 396–404
 ErdosVolume.stability_cost_upper	Inradius 164–180, 404–412
 ErdosVolume.stability_uniform_upper	Inradius 53–58, 407–412
 ErdosVolume.stability_normalized_example	Inradius 254–264
-NOT COUNTED	Main 2–13, 15–18, 36–41 — Preamble, version input, author details, section heading and index terms.
-NOT COUNTED	Main 14, 24–30, 44–47, 64–66, 69–71, 83–85, 93–94, 125–128, 134–148 — The planar all-degree maximum is attributed to Pólya. Publication history, the reported counterexample, and the separate covering question are cited. Mathematical conclusions in d ≥ 3 have their own rows.
-NOT COUNTED	Main 58–63, 67, 74–76, 78–83, 88–90, 95–96 — Table and figure layout.
-NOT COUNTED	Main 177–180, 182, 197–205, 215–221, 238, 300–303, 321–327 — Proof organization and cited results. Pólya gives the all-degree closed bound. EHP supplies the open form used in Lean. Tang and Wang give the order-two density estimate and the expanded companion supplies the smoothing argument.
+NOT COUNTED	Main 1–18, 20–23, 39–46; Inradius 1–4 — Source comments, preamble, author and date, abstract footnotes, index terms and section heading.
+NOT COUNTED	Main 19, 29–35, 49–52, 69–71, 74–76, 88–90, 98–99, 130–133, 139–153 — The planar all-degree maximum is attributed to Pólya. Publication history, the reported counterexample, and the separate covering question are cited. Mathematical conclusions in d ≥ 3 have their own rows.
+NOT COUNTED	Main 63–68, 72, 79–81, 83–88, 93–95, 100–101 — Table and figure layout.
+NOT COUNTED	Main 182–187, 189, 204–212, 222–228, 245, 307–310, 328–334 — Proof organization and cited results. The introduction cites Clark and Laugesen’s moment theorem, the isocapacitary inequality and Tang and Wang’s weak estimate, and comments on the history of Erdős’s question. Pólya gives the all-degree closed bound. EHP supplies the open form used in Lean. Tang and Wang give the order-two density estimate and the expanded companion supplies the smoothing argument.
 NOT COUNTED	Inradius 5–15, 58–59, 65–71, 105–112, 138–142, 182–202, 204, 266–273 — Section openings, two-mark attribution, the cited higher-dimensional companion and the explanation of the three centers. The short-paper deductions are mapped separately.
 NOT COUNTED	Inradius 93–95, 102–103, 126–129, 135–136 — Placement and graphics instructions. Mathematical captions have their own rows.
-NOT COUNTED	Main 42, 114, 132, 364, 366, 368, 397–442 — Page layout, itemization, section headings, acknowledgments, references and publication metadata.
-NOT COUNTED	Main 377–379, 385–395 — Companion extensions to higher dimensions and to the planar equal-pair family are cited. The next term, other asymptotically extremal configurations and planar fixed-count stability are research questions. The d=3 conclusions have separate rows.
+NOT COUNTED	Main 47, 119, 137, 371, 373, 375, 404–449 — Page layout, itemization, section headings, acknowledgments, author responsibility, bibliography and end of document.
+NOT COUNTED	Main 384–386, 392–402 — Companion extensions to higher dimensions and to the planar equal-pair family are cited. The next term, other asymptotically extremal configurations and planar fixed-count stability are research questions. The d=3 conclusions have separate rows.

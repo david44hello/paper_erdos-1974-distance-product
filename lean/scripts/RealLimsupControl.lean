@@ -1,4 +1,5 @@
 import Mathlib
+/-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 open Filter Set
 -- On the real numbers an unbounded sequence can have a computed limsup of zero.
 example : Filter.limsup (fun n : ℕ => (n : ℝ)) atTop = 0 := by

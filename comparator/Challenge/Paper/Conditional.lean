@@ -3,6 +3,7 @@ import Challenge.Paper.Statements
 import Challenge.Stability
 
 import Challenge.Flux
+/-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 
 noncomputable section
 

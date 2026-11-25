@@ -1,6 +1,6 @@
 import ErdosVolume.Paper.Illustrations
 
-/-! Explicit intermediate estimates in the final short paper. -/
+/-! Explicit intermediate estimates in the final short paper. Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 noncomputable section
 open MeasureTheory Set Filter Metric
 open scoped Topology ENNReal

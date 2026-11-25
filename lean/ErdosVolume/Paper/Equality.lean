@@ -5,7 +5,7 @@ noncomputable section
 open MeasureTheory Set Metric
 namespace ErdosVolume.Paper
 
-/-- Main text lines 349–355. Equality realizes the capacity radius and puts
+/-- Equality realizes the capacity radius and puts
 each complete sphere centered at a mark into the distance-product solid. -/
 theorem equality_capacity_spheres {d n : ℕ} (hd : 3 ≤ d) (hn : 0 < n)
     (hO : OpenIsoFact d) (hN : CapacityNormalization d) (hB : BallCapacityFact d)

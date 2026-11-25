@@ -86,7 +86,7 @@ theorem trunc_log_continuous (μ : Measure (Space 3)) (hμ : admissible μ) (k :
   · exact .of_forall fun a => (((continuous_id.dist (continuous_const (y := a))).max continuous_const).log
       (fun z => (he.trans_le (le_max_right (dist z a) e)).ne')).continuousAt
 
-/-- The solid for a compact source is bounded and measurable (inradius lines 17–31). -/
+/-- The solid for a compact source is bounded and measurable. -/
 theorem measureSolid_regular (μ : Measure (Space 3)) (hμ : admissible μ)
     (R : ℝ) (hR : 0 < R) :
     MeasurableSet (measureSolid μ R) ∧ Bornology.IsBounded (measureSolid μ R) := by
@@ -263,7 +263,7 @@ theorem pair_outside_cylinder (x : Space 3) (t : ℝ) (ht : 0 < t) (ht' : t < 1/
   nlinarith [mul_nonneg (sq_nonneg (x 0)) (show 0 ≤ (transverse x)^2-t^2 by linarith),
     sq_nonneg ((x 0)^2)]
 
-/-- Inradius lines 73–102. Both the inscribed ball and the enclosing cylinder. -/
+/-- Both the inscribed ball and the enclosing cylinder. -/
 theorem pair_ball_cylinder (t : ℝ) (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2) :
     closedBall 0 (Real.sqrt (1-t^2)) ⊆ measureSolid (pairLaw t) 1 ∧
     measureSolid (pairLaw t) 1 ⊆ {x | transverse x ≤ Real.sqrt (1-t^2)} := by
@@ -324,7 +324,7 @@ theorem pair_inradius (t : ℝ) (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2) :
     (le_csSup ⟨_, fun r hr => hup r hr⟩ (show Real.sqrt (1-t^2) ∈ A from
       Or.inr ⟨hpos, 0, ball_subset_closedBall.trans hball⟩))
 
-/-- Inradius lines 105–124. A ray meets the boundary at the unique positive root. -/
+/-- A ray meets the boundary at the unique positive root. -/
 theorem pair_radial (t : ℝ) (ht : 0 < t) (hsmall : t < 1 / Real.sqrt 2)
     (θ : Space 3) (hθ : ‖θ‖ = 1) (r : ℝ) (hr : 0 ≤ r) :
     (r • θ ∈ measureSolid (pairLaw t) 1 ↔ r^2 ≤ boundarySq t (θ 0)) ∧
@@ -657,7 +657,7 @@ theorem pair_ratio_limit : Tendsto (fun t : ℝ => ratio (pairLaw t) 1) (𝓝[>]
 
 end PairVolume
 
-/-- Main text lines 30–35 and inradius lines 53–57. -/
+/-- Uniform upper bound for the relative inradius loss at a positive threshold. -/
 theorem uniform_upper (R : ℝ) (hR : 0 < R) (ε : ℝ) (hε : 0 < ε) :
     ∃ h > 0, ∀ μ, admissible μ → 0 < deficit μ R → deficit μ R ≤ h →
        1 - inradius (measureSolid μ R) / R ≤ (1+ε)*deficit μ R := by sorry

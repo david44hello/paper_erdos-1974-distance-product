@@ -20,3 +20,5 @@ lake --no-cache comparator --config=comparator.json
 ```
 
 On acceptance, Lake prints `Lean default kernel accepts the solution` and `Your solution is okay!`. To include Lean's five additional proof checkers, append `--paranoid` to the same command.
+
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
