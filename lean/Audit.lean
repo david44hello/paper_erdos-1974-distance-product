@@ -1,5 +1,9 @@
-import ErdosVolume
-import Lean
+module
+
+public import ErdosVolume
+public import Lean
+
+@[expose] public section
 /-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 /- Inspect binders in the elaborated theorem type. The named propositions are the
 potential theory, flux and stability inputs identified in AUDIT_NOTES.md. -/
@@ -61,6 +65,18 @@ run_cmd ErdosVolumeAudit.report ``ErdosVolume.weighted_equality
 run_cmd ErdosVolumeAudit.report ``ErdosVolume.capacity_sphere_consequence
 #print axioms ErdosVolume.volume_capacity
 run_cmd ErdosVolumeAudit.report ``ErdosVolume.volume_capacity
+#print axioms ErdosVolume.CoordinateFacts.finiteCoordinates
+run_cmd ErdosVolumeAudit.report ``ErdosVolume.CoordinateFacts.finiteCoordinates
+#print axioms ErdosVolume.CoordinateFacts.borelCoordinates
+run_cmd ErdosVolumeAudit.report ``ErdosVolume.CoordinateFacts.borelCoordinates
+#print axioms ErdosVolume.CoordinateFacts.ennrealScalarTower
+run_cmd ErdosVolumeAudit.report ``ErdosVolume.CoordinateFacts.ennrealScalarTower
+#print axioms ErdosVolume.CoordinateFacts.twoAtLeastTwo
+run_cmd ErdosVolumeAudit.report ``ErdosVolume.CoordinateFacts.twoAtLeastTwo
+#print axioms ErdosVolume.CoordinateFacts.finiteThree
+run_cmd ErdosVolumeAudit.report ``ErdosVolume.CoordinateFacts.finiteThree
+#print axioms ErdosVolume.CoordinateFacts.borelThree
+run_cmd ErdosVolumeAudit.report ``ErdosVolume.CoordinateFacts.borelThree
 #print axioms ErdosVolume.Flux.combine_marks
 run_cmd ErdosVolumeAudit.report ``ErdosVolume.Flux.combine_marks
 #print axioms ErdosVolume.Flux.at_mark

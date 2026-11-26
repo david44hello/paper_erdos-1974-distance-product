@@ -1,6 +1,10 @@
-import ErdosVolume.Paper.Statements
-import ErdosVolume.Stability
-import ErdosVolume.Flux
+module
+
+public import ErdosVolume.Paper.Statements
+public import ErdosVolume.Stability
+public import ErdosVolume.Flux
+
+@[expose] public section
 
 /-! Versions with named analytic hypotheses for the two public stability statements.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/

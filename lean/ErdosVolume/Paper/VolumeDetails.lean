@@ -1,4 +1,8 @@
-import ErdosVolume.Paper.Illustrations
+module
+
+public import ErdosVolume.Paper.Illustrations
+
+@[expose] public section
 
 /-! Volume comparisons and the critical set in the distance-product paper.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/

@@ -24,7 +24,7 @@ The audit classifies a theorem with a named analytic premise as PROVED GIVEN whe
 
 The final stability module has 35 public theorems. Its local upper-bound root takes CompactIso, EqExists, Frostman, EqUnique and BallLaw. Paper.uniform_upper_given and Paper.sharp_stability_given supply the first two through the open isocapacity, capacity normalization, ball capacity and equilibrium existence premises. Their seven explicit paper-level premises therefore cover the arbitrary-threshold upper bound and both limiting supremum statements. Each permits every compactly supported source probability and imposes no uniform bound on its support radius.
 
-The audit contains 175 public theorems. It classifies 124 as PROVED, 46 as PROVED GIVEN and five as OPEN. The five unconditional targets with placeholders are Paper.finite_volume, Paper.erdos_product, Paper.first_order_radius, uniform_upper and sharp_stability. Source counts include public helpers.
+The audit contains 181 public theorems, including six helper proofs for ordinary Mathlib instances. It classifies 130 as PROVED, 46 as PROVED GIVEN and five as OPEN. The five unconditional targets with placeholders are Paper.finite_volume, Paper.erdos_product, Paper.first_order_radius, uniform_upper and sharp_stability. Source counts include public helpers.
 
 ## Bounds for real upper limits
 

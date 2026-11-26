@@ -1,0 +1,93 @@
+version: v0.4
+project:
+  name: Sharp volume and inradius bounds for distance-product solids
+  description: For finitely many Euclidean marks with positive weights summing to one in dimension d ≥
+    3, the sublevel set of their weighted geometric mean of distances at threshold R > 0 has volume at
+    most that of the radius-R ball, with equality exactly for coincident marks. The capacity proof takes
+    six named analytic hypotheses and the flux proof takes eight. In three dimensions, seven named hypotheses
+    give a sharp first-order inradius bound as the volume deficit tends to zero. Equally weighted approaching
+    marks prove unconditionally that every coefficient smaller than one fails.
+  authors:
+  - Dave Goel
+  license: Apache-2.0
+  responsible_maintainers:
+  - Dave Goel
+classification:
+  arxiv:
+  - math.CA
+  - math.AP
+  msc2020:
+  - 31B15
+  - 49Q10
+sources:
+- title: 'Erdős''s 1974 distance-product volume problem resolved: the ball is always the unique maximizer
+    in d ≥ 2'
+  authors:
+  - Dave Goel
+  id: 10.5281/zenodo.24400516
+  type: paper
+  location: https://doi.org/10.5281/zenodo.24400516
+  relationship: formalizes
+- title: 'Erdős''s 1974 distance-product volume problem resolved: the ball as unique maximizer, sharp
+    inradius stability, and other miscellanea'
+  authors:
+  - Dave Goel
+  id: 10.5281/zenodo.24543869
+  type: paper
+  location: https://doi.org/10.5281/zenodo.24543869
+  relationship: background
+status:
+  scope: The two volume routes concern dimensions d ≥ 3. The capacity route assumes open isocapacity,
+    capacity normalization, ball capacity, equilibrium existence, the equilibrium log-moment bound and
+    its sphere equality implication. The flux route assumes sharp isoperimetry, finite level area, punctured
+    and ball Gauss identities, sphere area, scalar Sard, an analytic null-set result and coarea on slabs.
+    The three-dimensional stability bound assumes OpenIsoFact, CapacityNormalization, BallCapacityFact,
+    EquilibriumExistence, Frostman, EqUnique and BallLaw. The separate lower witness uses no analytic
+    input. The five unconditional forms ErdosVolume.Paper.finite_volume, ErdosVolume.Paper.erdos_product,
+    ErdosVolume.Paper.first_order_radius, ErdosVolume.uniform_upper and ErdosVolume.sharp_stability remain
+    open in this development.
+  sorry_count: 2
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Quot.sound
+  - Classical.choice
+automation:
+  methods:
+  - method: agent
+    tool_setup: AI agents wrote Lean and carried out machine checks under the author’s direction.
+fidelity:
+  divergences: The arbitrary-mark volume comparison begins in dimension three. The planar result in the
+    paper title is separately attributed to Pólya. Two direct proof placeholders in the wider development
+    affect the five unconditional forms listed in scope. The selected conditional proofs and lower witness
+    use none of those placeholders.
+review:
+  status: agent-reviewed
+  reviewers:
+  - OpenAI Codex
+  notes: The independent OpenAI Codex check compared the selected theorem statements and assumptions with
+    the published proof and paper. The paper release has a signed clean build, kernel replay, six export
+    checks and standard and paranoid comparator results for its 170 finished statements.
+alignment:
+  namespace: ErdosVolume
+  statements:
+  - source: Short Theorem 1.1, capacity proof
+    lean: ErdosVolume.volume_capacity
+    module: RegistryChallenge
+    status: proved
+    note: Six capacity and equilibrium-measure hypotheses.
+  - source: Short Theorem 1.1, flux proof
+    lean: ErdosVolume.Flux.direct_bound_eq
+    module: RegistryChallenge
+    status: proved
+    note: Eight flux and geometric-measure hypotheses.
+  - source: Short Theorem 2.1, sharp first-order limit
+    lean: ErdosVolume.Paper.sharp_stability_given
+    module: RegistryChallenge
+    status: proved
+    note: Seven explicit analytic hypotheses, in dimension three.
+  - source: Short Theorem 2.1, lower sharpness witness
+    lean: ErdosVolume.sharp_coefficient
+    module: RegistryChallenge
+    status: proved
+    note: Unconditional examples from equally weighted marks.

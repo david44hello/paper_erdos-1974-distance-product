@@ -1,4 +1,8 @@
-import ErdosVolume.Paper.Representation
+module
+
+public import ErdosVolume.Paper.Representation
+
+@[expose] public section
 
 /-! Equality in the capacity comparison. Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 noncomputable section

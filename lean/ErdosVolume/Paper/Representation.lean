@@ -1,4 +1,8 @@
-import ErdosVolume.Paper.Conditional
+module
+
+public import ErdosVolume.Paper.Conditional
+
+@[expose] public section
 
 /-! Explicit representation of the logarithmic potential and two-mark reductions.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/

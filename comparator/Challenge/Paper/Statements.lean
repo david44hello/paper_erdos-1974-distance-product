@@ -1,8 +1,12 @@
-import Challenge.Capacity
+module
 
-import Challenge.Flux
+public import Challenge.Capacity
 
-import Challenge.Sharpness
+public import Challenge.Flux
+
+public import Challenge.Sharpness
+
+@[expose] public section
 /-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 
 noncomputable section

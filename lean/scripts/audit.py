@@ -60,7 +60,8 @@ def parse(lines, expected):
 def main():
     rows = claims()
     helper = (ROOT / "scripts/audit_inputs.lean.inc").read_text()
-    queries = ["import ErdosVolume", "import Lean", helper]
+    queries = ["module", "", "public import ErdosVolume", "public import Lean", "",
+               "@[expose] public section", helper]
     for name in rows:
         queries.extend([f"#print axioms {name}", f"run_cmd ErdosVolumeAudit.report ``{name}"])
     write_if_changed(ROOT / "Audit.lean", "\n".join(queries) + "\n")

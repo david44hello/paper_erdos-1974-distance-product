@@ -1,4 +1,8 @@
-import ErdosVolume.Paper.TrialCost
+module
+
+public import ErdosVolume.Paper.TrialCost
+
+@[expose] public section
 
 /-! The sharp infimum at a prescribed volume threshold in dimension three. Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import Challenge.Paper.TrialCost
+module
+
+public import Challenge.Paper.TrialCost
+
+@[expose] public section
 /-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 
 noncomputable section

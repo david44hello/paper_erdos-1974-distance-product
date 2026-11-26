@@ -1,7 +1,18 @@
-import ErdosVolume.Sharpness
+module
+
+public import ErdosVolume.Sharpness
+
+@[expose] public section
 
 /-! Logarithmic moments and the upper estimate for the inradius.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
+
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.ennrealScalarTower
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.twoAtLeastTwo
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteThree
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelThree
 
 noncomputable section
 open MeasureTheory Set Filter
@@ -32,6 +43,8 @@ def e₁ : X := EuclideanSpace.single (0 : Fin 3) 1
 
 /-- Push normalized Euclidean surface measure forward by the sphere inclusion. -/
 def sigma : Law :=
+  letI : SMul ENNReal (Measure (X)) :=
+    @MeasureTheory.Measure.instSMul (X) ENNReal _ _ ErdosVolume.CoordinateFacts.ennrealScalarTower
   let S := (volume : Law).toSphere
   (S Set.univ)⁻¹ • S.map (fun x : Metric.sphere (0 : X) 1 => (x : X))
 def H (s : ℝ) : ℝ := g sigma (s • e₁)

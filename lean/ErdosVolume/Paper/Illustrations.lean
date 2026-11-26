@@ -1,4 +1,8 @@
-import ErdosVolume.Paper.Equality
+module
+
+public import ErdosVolume.Paper.Equality
+
+@[expose] public section
 
 /-! Geometry of the two-mark figures in the illustrated paper.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/

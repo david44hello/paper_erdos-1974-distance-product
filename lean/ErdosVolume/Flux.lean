@@ -1,7 +1,18 @@
-import ErdosVolume.Defs
+module
+
+public import ErdosVolume.Defs
+
+@[expose] public section
 
 /-! Finite-charge superlevels and the direct volume comparison. The volume comparison uses the eight explicit analytic hypotheses below.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
+
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.ennrealScalarTower
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.twoAtLeastTwo
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteThree
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelThree
 
 noncomputable section
 open MeasureTheory Set Filter Metric InnerProductSpace
@@ -33,6 +44,8 @@ def rad (a : Fin n → Space d) (w : Fin n → ℝ) (t : ℝ) :=
 
 /-- Mathlib uses the diameter-power normalization of Hausdorff measure. -/
 def surface (S : Set (Space d)) : Measure (Space d) :=
+  letI : SMul ENNReal (Measure (Space d)) :=
+    @MeasureTheory.Measure.instSMul (Space d) ENNReal _ _ ErdosVolume.CoordinateFacts.ennrealScalarTower
   ENNReal.ofReal (omega (d-1) / (2 : ℝ) ^ (d-1)) •
     ((Measure.hausdorffMeasure ((d : ℝ) - 1)).restrict S)
 

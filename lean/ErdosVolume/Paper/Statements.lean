@@ -1,6 +1,10 @@
-import ErdosVolume.Capacity
-import ErdosVolume.Flux
-import ErdosVolume.Sharpness
+module
+
+public import ErdosVolume.Capacity
+public import ErdosVolume.Flux
+public import ErdosVolume.Sharpness
+
+@[expose] public section
 
 /-! Principal statements and additional printed claims, with proof obligations exposed.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/

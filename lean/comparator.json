@@ -1,0 +1,17 @@
+{
+  "challenge_module": "RegistryChallenge",
+  "solution_module": "RegistrySolution",
+  "theorem_names": [
+    "ErdosVolume.volume_capacity",
+    "ErdosVolume.Flux.direct_bound_eq",
+    "ErdosVolume.Paper.sharp_stability_given",
+    "ErdosVolume.sharp_coefficient"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

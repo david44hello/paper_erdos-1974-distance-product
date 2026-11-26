@@ -1,7 +1,45 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-! Definitions for the distance-product volume and inradius problem.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
+
+namespace ErdosVolume.CoordinateFacts
+
+/-- Finite real coordinate spaces are finite real modules. -/
+theorem finiteCoordinates (d : ℕ) : Module.Finite ℝ (WithLp 2 (Fin d → ℝ)) := inferInstance
+
+/-- The coordinate Euclidean space carries its Borel measurable structure. -/
+theorem borelCoordinates (d : ℕ) : BorelSpace (PiLp 2 (fun _ : Fin d => ℝ)) := inferInstance
+
+/-- Multiplication gives the scalar-tower law for extended nonnegative scalars. -/
+theorem ennrealScalarTower :
+    @IsScalarTower ENNReal ENNReal ENNReal
+      (@Algebra.toSMul ENNReal ENNReal _ _ (Algebra.id ENNReal))
+      (inferInstance : SMul ENNReal ENNReal)
+      (@Algebra.toSMul ENNReal ENNReal _ _ (Algebra.id ENNReal)) :=
+  IsScalarTower.right
+
+/-- The coordinate norm exponent is at least two. -/
+theorem twoAtLeastTwo : (1 + 1 : ℕ).AtLeastTwo := inferInstance
+
+/-- The finite-module fact specialized to three dimensions. -/
+theorem finiteThree : Module.Finite ℝ (WithLp 2 (Fin 3 → ℝ)) := finiteCoordinates 3
+
+/-- The Borel-space fact specialized to three dimensions. -/
+theorem borelThree : BorelSpace (PiLp 2 (fun _ : Fin 3 => ℝ)) := borelCoordinates 3
+
+end ErdosVolume.CoordinateFacts
+
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.ennrealScalarTower
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.twoAtLeastTwo
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteThree
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelThree
 
 noncomputable section
 open MeasureTheory Set Filter
@@ -42,6 +80,8 @@ def admissible (μ : Measure (Space 3)) : Prop :=
   IsProbabilityMeasure μ ∧ IsCompact μ.support
 
 def atomic {d n : ℕ} (a : Fin n → Space d) (w : Fin n → ℝ) : Measure (Space d) :=
+  letI : SMul ENNReal (Measure (Space d)) :=
+    @MeasureTheory.Measure.instSMul (Space d) ENNReal _ _ ErdosVolume.CoordinateFacts.ennrealScalarTower
   ∑ i, ENNReal.ofReal (w i) • Measure.dirac (a i)
 
 def newtonKernel {d : ℕ} (x y : Space d) : ℝ≥0∞ :=

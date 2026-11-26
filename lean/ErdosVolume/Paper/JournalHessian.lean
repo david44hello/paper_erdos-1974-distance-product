@@ -1,4 +1,8 @@
-import ErdosVolume.Paper.Illustrations
+module
+
+public import ErdosVolume.Paper.Illustrations
+
+@[expose] public section
 
 /-! The two Hessian eigenspaces and the direction estimate in the inradius proof.
 Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
