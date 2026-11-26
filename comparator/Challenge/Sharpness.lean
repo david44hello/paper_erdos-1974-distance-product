@@ -5,6 +5,13 @@ public import Challenge.Defs
 @[expose] public section
 /-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.ennrealScalarTower
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.twoAtLeastTwo
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteThree
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelThree
+
 noncomputable section
 
 open MeasureTheory Filter Set Metric

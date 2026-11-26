@@ -5,6 +5,13 @@ public import Challenge.Defs
 @[expose] public section
 /-! Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelCoordinates
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.ennrealScalarTower
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.twoAtLeastTwo
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.finiteThree
+attribute [local instance 2000] ErdosVolume.CoordinateFacts.borelThree
+
 noncomputable section
 
 open MeasureTheory Set Filter
@@ -44,6 +51,8 @@ def F (ν : Law) (δ : ℝ) (a : X) : ℝ := ∫ x in ann δ, phi (dist x a) ∂
 def e₁ : X := EuclideanSpace.single (0 : Fin 3) 1
 
 def sigma : Law :=
+  letI : SMul ENNReal (Measure (X)) :=
+    @MeasureTheory.Measure.instSMul (X) ENNReal _ _ ErdosVolume.CoordinateFacts.ennrealScalarTower
   let S := (volume : Law).toSphere
   (S Set.univ)⁻¹ • S.map (fun x : Metric.sphere (0 : X) 1 => (x : X))
 
